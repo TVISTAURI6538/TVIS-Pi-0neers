@@ -3,11 +3,17 @@
 # Our-Team-
 
 Vaishant - responsible for coding 
+
 Rubadharshan - responsible for documentation
+
 Kittiphong - responsible for hardware
+
 Mr. Manoj - Lab asst
+
 Ms. Anisree - Team coach
+
 Ms. Hemalatha - Team coordinator
+
 Mr. Arjun - Team trainer
 
 # About-Our-Team
