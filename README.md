@@ -6,7 +6,7 @@ Vaishant - responsible for coding
 
 Rubadharshan - responsible for documentation
 
-Kittiphong - responsible for hardware
+Siddharth- responsible for hardware
 
 Mr. Manoj - Lab asst
 
