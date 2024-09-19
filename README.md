@@ -1,5 +1,5 @@
 ![Image Description](Logo.png)
-# Our-Team-
+##
 
 Vaishant - responsible for coding 
 
