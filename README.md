@@ -1,5 +1,4 @@
-![Logo-removebg-preview](https://github.com/user-attachments/assets/7dfc1332-703b-409d-9de5-c7ab3f4bf163)
-
+![Image Description](path/to/image.png)
 # Our-Team-
 
 Vaishant - responsible for coding 
