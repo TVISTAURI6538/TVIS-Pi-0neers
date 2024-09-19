@@ -1,9 +1,10 @@
 ![Logo of TVIS-PiOneers](Logo.png)
 ___
+**GitHub repository for WRO INDIA Nationals Team TVIS-Pi0neers Future Engineers 2024. It contains our work on building a robot for self-assisted track navigation.**
 
-
-Vaishant - responsible for coding 
-
+Below is the documentation of the self-autonomous driving car
+___
+# Contents
 Rubadharshan - responsible for documentation
 
 Siddharth- responsible for hardware
