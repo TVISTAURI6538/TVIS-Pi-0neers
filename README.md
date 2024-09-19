@@ -1,4 +1,4 @@
-![Image Description](path/to/image.png)
+![Image Description](Logo.png)
 # Our-Team-
 
 Vaishant - responsible for coding 
