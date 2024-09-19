@@ -1,4 +1,4 @@
-![Image Description](Logo.png)
+![Logo of TVIS-PiOneers](Logo.png)
 ___
 
 
