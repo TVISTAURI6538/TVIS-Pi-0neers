@@ -74,5 +74,5 @@ The sensor we initially used proved to be highly inaccurate when tracking fast-p
 <img src="TCS-230.jpg" alt="Placeholder Image" width="200" height="200">
 </div>
 
-# Demonstration Video
+# Demonstration Videos
 
