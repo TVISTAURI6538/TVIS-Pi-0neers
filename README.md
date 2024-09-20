@@ -62,3 +62,8 @@ For the color sensor, we first decided to use the TCS-34725
 <div align="center">
 <img src="TCS-34725.jpg" alt="Placeholder Image" width="200" height="200">
 </div>
+The sensor was very inaccurate during fast-paced movement, so we decided to use the TCS-270 which was a great substitute for the TCS-34725
+
+<div align="center">
+<img src="TCS-270.jpg" alt="Placeholder Image" width="200" height="200">
+</div>
