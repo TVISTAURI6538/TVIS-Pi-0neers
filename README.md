@@ -10,8 +10,8 @@ ___
   - [Building and Schematic Diagram](#building-and-schematic-diagram)
   - [Photos](#photos)
 - [Software Sketch](#software)
-  - Programming Language 
-  - Open Challenge
+  - [Programming Language](#programming-language)
+  - [Open Challenge](#open-challenge)
      - Ultrasonic Sensor
      - Gyro Sensor
      - Color Sensor
@@ -35,7 +35,7 @@ ___
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
 - Color sensor
 - Gyro sensor
-## Assembly/Schematic Diagram 
+# Building and Schematic Diagram
 ## Photos
 | Left-aligned | Center-aligned |
 |:-------------|:--------------:|
