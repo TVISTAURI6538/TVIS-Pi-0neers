@@ -5,17 +5,12 @@ ___
 Below is the documentation of the self-autonomous driving car
 ___
 # Contents
-Rubadharshan - responsible for documentation
-
-Siddharth- responsible for hardware
-
-Mr. Manoj - Lab asst
-
-Ms. Anisree - Team coach
-
-Ms. Hemalatha - Team coordinator
-
-Mr. Arjun - Team trainer
+- Hardware Sketch
+  - Parts Used
+  - Sub-point 1.2
+- Main point 2
+  - Sub-point 2.1
+    - Sub-sub-point 2.1.1
 
 # About-Our-Team
 
