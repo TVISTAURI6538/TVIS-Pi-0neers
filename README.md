@@ -7,9 +7,9 @@ ___
 # Contents
 - [Hardware Sketch](#hardware)
   - [Parts Used](#parts-used)
-  - [Building/Schematic Diagram](#buildingschematic-diagram)
-  - Photos
-- Software Sketch
+  - [Building and Schematic Diagram](#building-and-schematic-diagram)
+  - [Photos](#photos)
+- [Software Sketch](#software)
   - Programming Language 
   - Open Challenge
      - Ultrasonic Sensor
