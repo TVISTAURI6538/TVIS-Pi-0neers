@@ -29,11 +29,11 @@ ___
  ## Parts Used
 - RC Offroad Car Chassis 
 - Arduino Nano
-- Three Ultrasonic Sensors HC-SRO4 
+- Three HC-SRO4 Ultrasonic Sensors 
 - L298N Motor Driver Module
 - 2200 mh battery LIPO
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
-- Color sensor
+- TCS-230 Color sensor
 - Gyro sensor
 # Building and Schematic Diagram
 ## Photos
@@ -52,6 +52,7 @@ ___
 #### Sensor
 #### Sensor
 # Our Team
+Ruba Darshan Ashok Kumar aspires to become a Robotic engineer. He has a good team-leading spirit. He participated in national 
 # Our Approach
 We first tried approaching the open challenge by making a simple maze solver with three ultrasonic sensors. However, we quickly realized that the algorithm involved too much static and backward motion.
 
@@ -62,7 +63,7 @@ For the color sensor, we first decided to use the TCS-34725
 <div align="center">
 <img src="TCS-34725.jpg" alt="Placeholder Image" width="200" height="200">
 </div>
-The sensor was very inaccurate during fast-paced movement, so we decided to use the TCS-270 which was a great substitute for the TCS-34725
+The sensor was very inaccurate during fast-paced movement, so we decided to use the TCS-230 which was a great substitute for the TCS-34725
 
 <div align="center">
 <img src="TCS-230.jpg" alt="Placeholder Image" width="200" height="200">
