@@ -12,18 +12,18 @@ ___
 - [Software Sketch](#software)
   - [Programming Language](#programming-language)
   - [Open Challenge](#open-challenge)
-     - Ultrasonic Sensor
-     - Gyro Sensor
-     - Color Sensor
-  - Obstacle Challenge 
-    - Improving processes of image processing and predictions through the camera
-       - Sensor
-       - Sensor
-       - Sensor
-- Our Team
-- Our Approach
-- Problems we encountered on the way
-- Demonstration Videos 
+     - [Ultrasonic Sensor](#ultrasonic-sensor)
+     - [Gyro Sensor](gyro-sensor)
+     - [Color Sensor](color-sensor)
+  - [Obstacle Challenge](obstacle-challenge)
+    - [Improving processes of image processing and predictions through the camera](improving-processes-of-image-processing-and-predictions-through-the-camera)
+       - [Sensor](sensor)
+       - [Sensor](sensor)
+       - [Sensor](sensor)
+- [Our Team](our-team)
+- [Our Approach](our-approach)
+- [Problems we encountered on the way](problems-we-encountered-on-the-way)
+- [Demonstration Videos](demonstration-videos)
  ___
  # Hardware
  ## Parts Used
