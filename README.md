@@ -16,7 +16,7 @@ ___
      - [Gyro Sensor](#gyro-sensor)
      - [Color Sensor](#color-sensor)
   - [Obstacle Challenge](#obstacle-challenge)
-    - [Improving processes of image processing and predictions through the camera](#improving-processes-of-image-processing-and-predictions-through-the-camera)
+    - [Improving image processing and predictions through the camera](#improving-image-processing-and-predictions-through-the-camera)
        - [Sensor](#sensor)
        - [Sensor](#sensor)
        - [Sensor](#sensor)
