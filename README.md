@@ -7,10 +7,11 @@ ___
 # Contents
 - Hardware Sketch
   - Parts Used
-  - Sub-point 1.2
-- Main point 2
-  - Sub-point 2.1
-    - Sub-sub-point 2.1.1
+  - Building/Schematic Diagram
+  - Photos
+- Software Sketch
+  - OS used
+  - 
 
 # About-Our-Team
 
