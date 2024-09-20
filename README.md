@@ -6,7 +6,7 @@ Below is the documentation of the self-autonomous driving car
 ___
 # Contents
 - [Hardware Sketch](#hardware)
-  - Parts Used
+  - [Parts Used](#partsused)
   - Building/Schematic Diagram
   - Photos
 - Software Sketch
