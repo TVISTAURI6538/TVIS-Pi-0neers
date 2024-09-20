@@ -58,4 +58,4 @@ We first tried approaching the open challenge by making a simple maze solver wit
 So we approached it differently by integrating the Ultrasonic Sensor with the Color sensor and Gyro Sensor.
 # Problem encountered on the way
 For the color sensor, we first decided to use the TCS-34725
-![Logo of TVIS-PiOneers](Logo.png)
+![TCS-34725 img]()
