@@ -7,7 +7,7 @@ ___
 # Contents
 - [Hardware Sketch](#hardware)
   - [Parts Used](#parts-used)
-  - Building/Schematic Diagram
+  - [Building/Schematic Diagram](Building/Schematic-Diagram)
   - Photos
 - Software Sketch
   - Programming Language 
