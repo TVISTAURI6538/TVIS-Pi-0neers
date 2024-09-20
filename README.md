@@ -10,20 +10,19 @@ ___
   - Building/Schematic Diagram
   - Photos
 - Software Sketch
-  - Programming Lnaguage 
+  - Programming Language 
   - Open Challenge
      - Ultrasonic Sensor
      - Gyro Sensor
      - Color Sensor
   - Obstacle Challenge 
-    - Improving processes of image processing and predictions through camera
-       - 
+    - Improving processes of image processing and predictions through the camera
        - Sensor
        - Sensor
-- About Team
-  - Introduction
-  - Our Approach
-  - Problems we encountered on the way
+       - Sensor
+- Our Team
+- Our Approach
+- Problems we encountered on the way
 - Demonstration Videos 
  ___
  # Hardware
@@ -43,7 +42,7 @@ ___
 | Row 1, Col 1 | Row 1, Col 2   | 
 | Row 2, Col 1 | Row 2, Col 2   | 
 # Software 
-## Programming Lnaguage 
+## Programming Language 
 ## Open Challenge
 ### Ultrasonic Sensor
 ### Gyro Sensor
@@ -52,4 +51,11 @@ ___
 ### Improving image processing and predictions through the camera.
 #### Sensor
 #### Sensor
+# Our Team
+# Our Approach
+We first tried approaching the open challenge by making a simple maze solver with three ultrasonic sensors. However, we quickly realized that the algorithm involved too much static and backward motion.
 
+So we approached it differently by integrating the Ultrasonic Sensor with the Color sensor and Gyro Sensor.
+# Problem encountered on the way
+For the color sensor, we first decided to use the TCS-34725
+![Logo of TVIS-PiOneers](Logo.png)
