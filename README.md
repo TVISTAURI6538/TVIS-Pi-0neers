@@ -62,7 +62,7 @@ We both study at The Velammal International School, Ponneri.
 In our first attempt to tackle the open challenge, we developed a simple maze-solving algorithm using three ultrasonic sensors. However, we encountered issues with excessive static and backward movement in the algorithm.
 
 We decided to take a unique approach by combining the functionality of the Ultrasonic Sensor with that of the Color sensor and Gyro Sensor.
-# Problem encountered on the way
+# Problems encountered on the way
 We decided to use the TCS-34725 for the color sensor.
 
 <div align="center">
