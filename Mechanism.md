@@ -1,2 +1,3 @@
-# Our Team
-**Vaishant Ananth** As an 11th-grade student, he aspires to become a robotic engineer passionate about coding and hardware. He is actively involved in various technology challenges and dedicated to mastering both the software and hardware aspects of robotics.
+# Mechanism 
+## Steering
+The Ackerman's steering mechanism was selected for the robot's steering system due to its ability to meet all specified criteria and its suitability for the robot's intended functions. Extensive research was conducted to identify the most appropriate steering system, and various options, including rack and pinion steering, electronic rear motor steering, 4-wheel steering, and hydraulic steering, were evaluated. However, these mechanisms presented significant limitations that would impede the robot's performance. The servo-based Ackerman's steering system emerged as the optimal choice, offering superior speed and precise turning, even in sharp maneuvers.
