@@ -36,7 +36,7 @@ ___
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
 - TCS-230 Color sensor
 - Gyro sensor
-# Building and Schematic Diagram
+## Building and Schematic Diagram
 ## Photos
 | Left-aligned | Center-aligned |
 |:-------------|:--------------:|
