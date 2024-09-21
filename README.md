@@ -27,15 +27,15 @@ ___
  ___
  # Hardware
  ## Parts Used
-- RC Offroad Car Chassis 
+- Raspberry Pi 4 Model B
 - Arduino Nano
+- RC Offroad Car Chassis 
 - Three HC-SRO4 Ultrasonic Sensors 
 - L298N Motor Driver Module
 - 2200 mh battery LIPO
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
 - TCS-230 Color sensor
 - Gyro sensor
-- Raspberry Pi 4B
 # Building and Schematic Diagram
 ## Photos
 | Left-aligned | Center-aligned |
@@ -57,8 +57,16 @@ ___
 
 **Ruba Darshan Ashok Kumar** is an 11th-grade student passionate about coding and web design. Experienced in competitive environments, demonstrating strong leadership skills. Aspiring robotic engineer dedicated to excellence in documentation and design. 
 
-We both study at The Velammal International School, Ponneri.
+We both study at The Velammal International School, Ponneri
 
+We express our heartfelt gratitude to those who assisted in completing our project.
+Mrs.Anisree-Robotics Coach
+
+Mr.Akash Singh-Robotics Trainer
+
+Mrs.Hemalatha-VKP Techsavy Coordinator
+
+Mr.Manoj-Lab assistant
 # Our Approach
 In our first attempt to tackle the open challenge, we developed a simple maze-solving algorithm using three ultrasonic sensors. However, we encountered excessive static and backward movement issues in the algorithm.
 
