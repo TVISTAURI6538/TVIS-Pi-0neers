@@ -69,9 +69,9 @@ We decided to use the TCS-34725 for the color sensor.
 <div align="center">
 <img src="TCS-34725.jpg" alt="Placeholder Image" width="200" height="200">
 </div>
-
+<br>
 The sensor we initially used proved to be highly inaccurate when tracking fast-paced movement. As a solution, we opted to utilize the TCS-230, which effectively served as a superior alternative to the TCS-34725.
-
+<br><br>
 <div align="center">
 <img src="TCS-230.jpg" alt="Placeholder Image" width="200" height="200">
 </div>
