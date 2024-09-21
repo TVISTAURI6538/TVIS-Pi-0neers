@@ -35,6 +35,7 @@ ___
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
 - TCS-230 Color sensor
 - Gyro sensor
+- Raspberry Pi 4B
 # Building and Schematic Diagram
 ## Photos
 | Left-aligned | Center-aligned |
