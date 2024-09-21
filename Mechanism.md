@@ -1,4 +1,4 @@
 # Mechanism 
 ## Steering
 We have implemented Ackerman's steering mechanism for the steering system. We chose this system because it met all our requirements and was the best fit for our robot. We conducted extensive research to find the ideal steering system for our robot. We tested several steering systems, including rack and pinion steering, electronic rear motor steering, 4-wheel steering, and hydraulic steering. However, each of these mechanisms had significant drawbacks that would hinder our robot's performance. The servo-based Ackerman's steering emerged as the perfect choice, offering excellent speed and precise turning, even on sharp turns.
-Ackerman Steering.jpg
+![Logo of TVIS-PiOneers](ackerman steering.jpg)
