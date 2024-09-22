@@ -37,8 +37,7 @@ ___
 - TCS-230 Color sensor
 - Gyro sensor
 ## Building and Schematic Diagram
-We used an [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering)
- metal Chassis because of the High-precision Steering
+We used an [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) metal Chassis because of the High-precision Steering
 ## Photos
 | Left-aligned | Center-aligned |
 |:-------------|:--------------:|
