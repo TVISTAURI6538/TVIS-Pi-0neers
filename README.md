@@ -29,6 +29,7 @@ ___
  ## Parts Used
 - Raspberry Pi 4 Model B
 - Arduino Nano
+- EV3 Mindstorm 
 - RC Offroad Car Chassis 
 - Three HC-SRO4 Ultrasonic Sensors 
 - L298N Motor Driver Module
@@ -72,7 +73,8 @@ Mr.Manoj-Lab assistant
 # Our Approach
 In our first attempt to tackle the open challenge, we developed a simple maze-solving algorithm using three ultrasonic sensors. However, we encountered excessive static and backward movement issues in the algorithm.
 
-We decided to take a unique approach by combining the functionality of the Ultrasonic Sensor with that of the Color sensor and Gyro Sensor.
+We decided to take a unique approach by combining the functionality of the Ultrasonic Sensor with that of the Color sensor and Gyro Sensor. but this also proved to be inaccurate, so we decided to move with the EV3 Mindstorms 
+
 # Problems we encountered on the way
 We decided to use the TCS-34725 for the color sensor.
 
@@ -85,6 +87,7 @@ The sensor we initially used proved to be highly inaccurate when tracking fast-p
 <div align="center">
 <img src="TCS-230.jpg" alt="Placeholder Image" width="200" height="200">
 </div>
+We then decided to integrate this gyro sensor and ultrasonic sensor but the ultrasonic sensors gave very inaccurate readings during the robot's run. Therefore, we decided to solve the open challenge by using EV3
 
 # Demonstration Videos
 
