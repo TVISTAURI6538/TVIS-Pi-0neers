@@ -37,6 +37,8 @@ ___
 - TCS-230 Color sensor
 - Gyro sensor
 ## Building and Schematic Diagram
+We used an [Ackerman Steering](https://github.com/your-username/your-repo/blob/main/example-file.txt)
+ metal Chassis because of the High-precision Steering
 ## Photos
 | Left-aligned | Center-aligned |
 |:-------------|:--------------:|
@@ -59,7 +61,7 @@ ___
 
 We both study at The Velammal International School, Ponneri
 
-We express our heartfelt gratitude to those who assisted in completing our project.
+We are very thankful to those who helped in completing our project.
 
 Mrs.Anisree-Robotics Coach
 
