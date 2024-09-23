@@ -49,11 +49,14 @@ We chose a standard [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi
 |:-------------|:--------------:|
 | Row 1, Col 1 | Row 1, Col 2   | 
 
+## Dynamic Approaches to Power and Control
+
 ## Photos
 | Left-aligned | Center-aligned |
 |:-------------|:--------------:|
 | Row 1, Col 1 | Row 1, Col 2   | 
 | Row 2, Col 1 | Row 2, Col 2   | 
+
 
 # Software 
 ## Programming Language 
