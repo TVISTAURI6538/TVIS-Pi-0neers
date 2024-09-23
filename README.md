@@ -29,7 +29,6 @@ ___
  ## Parts Used
 - Raspberry Pi 4 Model B
 - Arduino Nano
-- EV3 Mindstorm 
 - RC Offroad Car Chassis 
 - Three HC-SRO4 Ultrasonic Sensors 
 - L298N Motor Driver Module
