@@ -26,19 +26,18 @@ ___
 - [Demonstration Videos](#demonstration-videos)
  ___
  # Hardware
-Our self-driving car is built with a metal chassis and integrates off-the-shelf components such as cameras, sensors, and electrical systems to optimize motor torque, performance, etc.
+Our self-driving car consists of an [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering)  metal chassis and integrates standard components such as cameras, sensors, and electrical systems to optimize motor torque, performance, etc.
 [Photo of the overall and completed robot]
  ## Parts Used
 - Raspberry Pi 4 Model B
--  [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) 
 - Arduino Nano
-- RC Offroad Car Chassis 
+- Ackerman Steering Metal Chassis 
 - Three HC-SRO4 Ultrasonic Sensors 
 - L298N Motor Driver Module
 - 2200 mh battery LIPO
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
 - TCS-230 Color sensor
-- Gyro sensor
+- MPU-6050 Gyro sensor
 ## Chassis
 We used a pre-assembled [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) metal Chassis because of its exceptional precision in steering. This chassis is perfect for constructing rapid robot kits with turning capabilities that closely resemble those of regular cars. The steering mechanism faithfully replicates the steering of real-world cars and is well-suited for simulating and constructing projects based on this technology. Moreover, this steering mechanism allows for the handling of heavier loads and offers easier control compared to standard skid steering. Additionally, the front of the chassis features crash-absorbing construction, protecting against impacts.
 <div align="center">
