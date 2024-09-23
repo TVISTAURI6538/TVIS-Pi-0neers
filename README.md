@@ -37,9 +37,10 @@ Our self-driving car consists of an [Ackerman Steering](https://github.com/TVIST
 - 2200 mh battery LIPO
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
 - TCS-230 Color sensor
+- [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering)
 - MPU-6050 Gyro sensor
 ## Chassis
-We used a pre-assembled [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) metal Chassis because of its exceptional precision in steering. This chassis is perfect for constructing rapid robot kits with turning capabilities that closely resemble those of regular cars. The steering mechanism faithfully replicates the steering of real-world cars and is well-suited for simulating and constructing projects based on this technology. Moreover, this steering mechanism allows for the handling of heavier loads and offers easier control compared to standard skid steering. Additionally, the front of the chassis features crash-absorbing construction, protecting against impacts.
+We chose a standard  metal chassis for its exceptional precision in steering, which greatly enhances the performance of our robot. This chassis is ideal for constructing high-speed robot kits with advanced turning capabilities that closely mimic the steering dynamics of conventional vehicles. The Ackerman steering mechanism replicates the precise geometry found in real-world cars, providing accurate and reliable control, making it particularly advantageous for simulations and projects based on automotive technology. Additionally, the chassis supports heavier loads, offering greater stability and control compared to traditional skid steering systems, and features a crash-absorbing construction at the front to protect against impacts and ensure durability in demanding environments. We altered the motor since the torque in the motor was very low. 
 <div align="center">
 <img src="Ackerman Steering Chassis.jpg" alt="Ackerman Steering Metal Chassis" width="400" height="400">
 </div>
