@@ -44,7 +44,11 @@ We chose a standard [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi
 <div align="center">
 <img src="Ackerman Steering Chassis.jpg" alt="Ackerman Steering Metal Chassis" width="300" height="300">
 </div>
-
+<br>
+| Chassis without Alteration | Chassis with Alteration |
+|:-------------|:--------------:|
+| Row 1, Col 1 | Row 1, Col 2   | 
+| Row 2, Col 1 | Row 2, Col 2   | 
 ## Photos
 | Left-aligned | Center-aligned |
 |:-------------|:--------------:|
