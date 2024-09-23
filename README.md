@@ -37,7 +37,6 @@ Our self-driving car consists of an [Ackerman Steering](https://github.com/TVIST
 - 2200 mh battery LIPO
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
 - TCS-230 Color sensor
--
 - MPU-6050 Gyro sensor
 ## Chassis
 We chose a standard [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) metal chassis for its exceptional precision in steering, which greatly enhances the performance of our robot. This chassis is ideal for constructing high-speed robot kits with advanced turning capabilities that closely mimic the steering dynamics of conventional vehicles. The Ackerman steering mechanism replicates the precise geometry found in real-world cars, providing accurate and reliable control, making it particularly advantageous for simulations and projects based on automotive technology. Additionally, the chassis supports heavier loads, offering greater stability and control compared to traditional skid steering systems, and features a crash-absorbing construction at the front to protect against impacts and ensure durability in demanding environments. We altered the motor since the torque in the motor was very low. 
@@ -45,15 +44,17 @@ We chose a standard [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi
 <img src="Ackerman Steering Chassis.jpg" alt="Ackerman Steering Metal Chassis" width="300" height="300">
 </div>
 <br>
+
 | Chassis without Alteration | Chassis with Alteration |
 |:-------------|:--------------:|
 | Row 1, Col 1 | Row 1, Col 2   | 
-| Row 2, Col 1 | Row 2, Col 2   | 
+
 ## Photos
 | Left-aligned | Center-aligned |
 |:-------------|:--------------:|
 | Row 1, Col 1 | Row 1, Col 2   | 
 | Row 2, Col 1 | Row 2, Col 2   | 
+
 # Software 
 ## Programming Language 
 ## Open Challenge
