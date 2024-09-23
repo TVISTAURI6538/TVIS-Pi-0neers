@@ -39,7 +39,7 @@ ___
 ## Building and Schematic Diagram
 We used a pre-assembled [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) metal Chassis because of its exceptional precision in steering. This chassis is perfect for constructing rapid robot kits with turning capabilities that closely resemble those of regular cars. The steering mechanism faithfully replicates the steering of real-world cars and is well-suited for simulating and constructing projects based on this technology. Moreover, this steering mechanism allows for the handling of heavier loads and offers easier control compared to standard skid steering. Additionally, the front of the chassis features crash-absorbing construction, protecting against impacts.
 <div align="center">
-<img src="Ackerman Steering Chassis.jpg" alt="Ackerman Steering Metal Chassis">
+<img src="Ackerman Steering Chassis.jpg" alt="Ackerman Steering Metal Chassis" width="400" height="400">
 </div>
 
 ## Photos
@@ -82,13 +82,13 @@ We decided to take a unique approach by combining the functionality of the Ultra
 We decided to use the TCS-34725 for the color sensor.
 
 <div align="center">
-<img src="TCS-34725.jpg" alt="Placeholder Image" width="200" height="200">
+<img src="TCS-34725.jpg" alt="TCS-34725" width="200" height="200">
 </div>
 <br>
 The sensor we initially used proved to be highly inaccurate when tracking fast-paced movement. As a solution, we opted to utilize the TCS-230, which effectively served as a superior alternative to the TCS-34725.
 <br><br>
 <div align="center">
-<img src="TCS-230.jpg" alt="Placeholder Image" width="200" height="200">
+<img src="TCS-230.jpg" alt="TCS-230" width="200" height="200">
 </div>
 We then decided to integrate this gyro sensor and ultrasonic sensor but the ultrasonic sensors gave very inaccurate readings during the robot's run. Therefore, we decided to solve the open challenge by using EV3
 
