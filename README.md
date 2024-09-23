@@ -26,8 +26,11 @@ ___
 - [Demonstration Videos](#demonstration-videos)
  ___
  # Hardware
+Our self-driving car is built with a metal chassis and integrates off-the-shelf components such as cameras, sensors, and electrical systems to optimize motor torque, performance, etc.
+[Photo of the overall and completed robot]
  ## Parts Used
 - Raspberry Pi 4 Model B
+-  [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) 
 - Arduino Nano
 - RC Offroad Car Chassis 
 - Three HC-SRO4 Ultrasonic Sensors 
