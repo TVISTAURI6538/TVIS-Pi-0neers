@@ -7,7 +7,7 @@ ___
 # Contents
 - [Hardware Sketch](#hardware)
   - [Parts Used](#parts-used)
-  - [Building and Schematic Diagram](#building-and-schematic-diagram)
+  - [Chassis](#chassis)
   - [Photos](#photos)
 - [Software Sketch](#software)
   - [Programming Language](#programming-language)
@@ -36,7 +36,7 @@ ___
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
 - TCS-230 Color sensor
 - Gyro sensor
-## Building and Schematic Diagram
+## Chassis
 We used a pre-assembled [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) metal Chassis because of its exceptional precision in steering. This chassis is perfect for constructing rapid robot kits with turning capabilities that closely resemble those of regular cars. The steering mechanism faithfully replicates the steering of real-world cars and is well-suited for simulating and constructing projects based on this technology. Moreover, this steering mechanism allows for the handling of heavier loads and offers easier control compared to standard skid steering. Additionally, the front of the chassis features crash-absorbing construction, protecting against impacts.
 <div align="center">
 <img src="Ackerman Steering Chassis.jpg" alt="Ackerman Steering Metal Chassis" width="400" height="400">
