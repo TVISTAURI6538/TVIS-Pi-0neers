@@ -50,9 +50,7 @@ We chose a [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_F
 
 | Chassis without Alteration | Chassis with Alteration |
 |:-------------|:--------------:|
-| Row 1, Col 1 | Row 1, Col 2   | 
-
-## Dynamic Approaches to Power and Control
+|![Chassis without Alteration](Chassis without Alteration.jpg)|
 
 ## Photos
 | Left-aligned | Center-aligned |
