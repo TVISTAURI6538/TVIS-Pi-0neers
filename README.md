@@ -50,7 +50,7 @@ We chose a [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_F
 
 | Chassis without Alteration | Chassis with Alteration |
 |:-------------|:--------------:|
-|![Chassis without Alteration](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/7d53ea98e56dc66d1b2d5453410f25f88bbe4a76/Chassis%20without%20Alteration.jpg)|![Chassis with Alteration](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/7d53ea98e56dc66d1b2d5453410f25f88bbe4a76/Chassis%20without%20Alteration.jpg)|
+|![Chassis without Alteration](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/7d53ea98e56dc66d1b2d5453410f25f88bbe4a76/Chassis%20without%20Alteration.jpg)|![Chassis with Alteration](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/79305c4250215582e4d3b7d96ede7fff2742e560/Chassis%20with%20Alteration.jpg)|
 
 ## Photos
 | Left-aligned | Center-aligned |
