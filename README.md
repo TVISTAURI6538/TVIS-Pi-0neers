@@ -31,7 +31,7 @@ Our self-driving car consists of an [Ackerman Steering](https://github.com/TVIST
  ## Parts Used
 - Raspberry Pi 4 Model B
 - Arduino Nano
-- Camera
+- Web Camera
 - Ackerman Steering Metal Chassis 
 - Three HC-SRO4 Ultrasonic Sensors 
 - L298N Motor Driver Module
@@ -42,22 +42,17 @@ Our self-driving car consists of an [Ackerman Steering](https://github.com/TVIST
 ## Chassis
 Our [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) car chassis is designed with a lower base, featuring a Lego component and a sturdy wheel rim to support the upper platform. The upper platform houses a PCB board, where a Raspberry Pi 4 Model B is connected to a camera, an Arduino Nano, and several LEDs that indicate the operational status of the microcontrollers. Additionally, it incorporates a variable converter and a step-down buck converter to ensure efficient power management. Under the lower base, we have integrated a color sensor, which enhances the robot's ability to interact with its environment by detecting specific colors.
 
-We chose a [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) car metal chassis for its precision steering, significantly enhancing our robot's performance. Ideal for high-speed projects, the chassis features an Ackerman steering mechanism that mimics real-world vehicle geometry, offering accurate control, especially for automotive simulations. Designed to handle heavier loads, it provides superior stability and control, outperforming traditional skid-steering systems, with a front crash-absorbing construction for durability in demanding environments. We altered the motor due to low torque, improving acceleration and overall performance, allowing the robot to navigate challenging conditions more efficiently.
+We chose a [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) car metal chassis for its precision steering, significantly enhancing our robot's performance. Ideal for high-speed projects, the chassis features an Ackerman steering mechanism that mimics real-world vehicle geometry, offering accurate control, especially for automotive simulations. Designed to handle heavier loads, it provides superior stability and control, outperforming traditional skid-steering systems, with a front crash-absorbing construction for durability in demanding environments.
 <div align="center">
-<img src="Ackerman Steering Chassis.jpg" alt="Ackerman Steering Metal Chassis" width="300" height="300">
+<img src="Ackerman Steering Chassis.jpg" alt="Ackerman Steering Metal Chassis" width="400" height="400">
 </div>
 <br>
 
 | Chassis without Alteration | Chassis with Alteration |
-|:-------------|:--------------:|
+|:-------------:|:--------------:|
 |![Chassis without Alteration](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/7d53ea98e56dc66d1b2d5453410f25f88bbe4a76/Chassis%20without%20Alteration.jpg)|![Chassis with Alteration](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/79305c4250215582e4d3b7d96ede7fff2742e560/Chassis%20with%20Alteration.jpg)|
 
-## Photos
-| Left-aligned | Center-aligned |
-|:-------------|:--------------:|
-| Row 1, Col 1 | Row 1, Col 2   | 
-| Row 2, Col 1 | Row 2, Col 2   | 
-
+We upgraded the motor because of low torque, which improved acceleration and overall performance. This change allows the robot to navigate challenging conditions more easily.
 
 # Software 
 ## Programming Language 
