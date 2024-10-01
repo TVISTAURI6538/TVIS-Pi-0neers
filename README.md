@@ -34,7 +34,6 @@ Our self-driving car consists of an [Ackerman Steering](https://github.com/TVIST
 - Web Camera
 - Ackerman Steering Metal Chassis 
 - Three HC-SRO4 Ultrasonic Sensors 
-- L298N Motor Driver Module
 - 2200MAH 3S 80C  LiPo Battery
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
 - TCS-230 Color sensor
@@ -64,16 +63,16 @@ The Arduino Nano is connected to a variable step-down buck converter, which regu
     </tr>
     <tr>
         <td>
-           <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/0417a12bb013ab10ab0c64578d7a6ebe1776d6b2/Arduino%20Nano.jpg" alt="Image" width="250" height="250"/><br>
-            Text for Column 1
+           <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/0417a12bb013ab10ab0c64578d7a6ebe1776d6b2/Arduino%20Nano.jpg" alt="Image" width="431" height="292"/><br>
+            Arduino Nano
         </td>
         <td>
              <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/d51f7891a8e87f3b2f734b9ad5d0b60ee02faeea/LM2596%20Buck%20Converter.jpg" alt="Image" width="431" height="292"/><br>
-            Text for Column 2
+            LM2596 Step Down DC-DC Buck Converter Adjustable Module
         </td>
         <td>
              <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/359e8373da78674313e41fab2dd8878b5f2317e8/USB%20Buck%20Converter.jpg" alt="Image" width="431" height="292"/><br>
-            Text for Column 3
+            Buck Converter Module 5A USB Voltage Regulator
         </td>
     </tr>
 </table>
