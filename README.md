@@ -35,7 +35,7 @@ Our self-driving car consists of an [Ackerman Steering](https://github.com/TVIST
 - Ackerman Steering Metal Chassis 
 - Three HC-SRO4 Ultrasonic Sensors 
 - L298N Motor Driver Module
-- 2200 mh battery LIPO
+- 2200MAH 3S 80C  LiPo Battery
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
 - TCS-230 Color sensor
 - MPU-6050 Gyro sensor
@@ -53,8 +53,38 @@ We chose a [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_F
 |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/7d53ea98e56dc66d1b2d5453410f25f88bbe4a76/Chassis%20without%20Alteration.jpg" alt="Image" width="431" height="292"/>|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/79305c4250215582e4d3b7d96ede7fff2742e560/Chassis%20with%20Alteration.jpg" alt="Image" width="431" height="292"/> |
 
 We upgraded the motor because of low torque, which improved acceleration and overall performance. This change allows the robot to navigate challenging conditions more easily.
+## Understanding Power and Control
+The vehicle is powered by a single 2200 mAh 3S LiPo battery, providing an output of 11.1 volts. This voltage is routed through LM2596 step-down DC-DC buck converters and a Buck Converter Module USB Voltage Regulator rated at 5A, which efficiently reduces the voltage to safe levels. These converters safeguard the Arduino Nano, Raspberry Pi, and high-torque servo from potential overvoltage damage, ensuring reliable operation and extending the lifespan of all components.
 
-# Software 
+The Arduino Nano is connected to a variable step-down buck converter, which regulates the speed of the steering motors. We fine-tuned the power supplied to the motors to ensure that both their speed and the operation of the sensors were optimized, allowing for accurate vehicle navigation. The Arduino Nano communicates with the motors using PWM (Pulse Width Modulation) pins, enabling precise control of their performance.
+
+<table>
+    <tr>
+        <th colspan="3">Individual Components</th>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://via.placeholder.com/50" alt="Image 1"><br>
+            Text for Column 1
+        </td>
+        <td>
+            <img src="https://via.placeholder.com/50" alt="Image 2"><br>
+            Text for Column 2
+        </td>
+        <td>
+            <img src="https://via.placeholder.com/50" alt="Image 3"><br>
+            Text for Column 3
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">This is a description that spans all three columns.</td>
+    </tr>
+</table>
+
+
+
+
+# Software
 ## Programming Language 
 ## Open Challenge
 ### Ultrasonic Sensor
