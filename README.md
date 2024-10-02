@@ -77,6 +77,21 @@ The Arduino Nano is connected to a variable step-down buck converter, which regu
     </tr>
 </table>
 
+## Motors
+
+Our car features rear-wheel drive, powered by a plastic gear dual shaft motor and an LD-1501MG, a high-quality servo. The dual shaft motor is controlled through a variable step-down buck converter, providing enhanced control and feedback for more precise performance.
+
+The chassis was initially equipped with a ready-made brushless dc motor that did not meet our torque expectations. As a result, we decided to modify the chassis and install a dual-shaft motor, which significantly enhanced the car's performance.
+
+We opted for servo-based steering because it supports [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) and can operate at higher voltages, enabling us to extract more power from it.
+
+## Sensors
+We have integrated the TCS-230 color sensor to detect the blue and orange lines on the game mat. After careful calibration of the color values,.This calibration process involved adjusting the sensitivity levels and thresholds to enhance the sensor's ability to differentiate between the blue and orange colors, allowing the robot to respond effectively to changes
+
+We initially used the TCS-34725 color sensor but found it to be inaccurate when tracking fast-paced movements, resulting in unreliable readings. To address this, we switched to the TCS-230 color sensor, which has proven to be a superior alternative, providing accurate color detection and enhancing our system's responsiveness during rapid manoeuvres
+
+We have equipped the front of the car with a wide-angle camera to detect the corners of black walls and identify red and green blocks, preventing collisions. The camera is securely mounted on the Raspberry Pi case using double tape, which ensures precise distance calculations in the algorithm, enhancing navigation and obstacle detection.
+
 # Software
 ## Programming Language 
 ## Open Challenge
