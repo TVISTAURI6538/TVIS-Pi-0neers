@@ -9,6 +9,8 @@ ___
   - [Parts Used](#parts-used)
   - [Chassis](#chassis)
   - [Understanding Power and Control](#understanding-power-and-control)
+  - [Motors](#motors)
+  - [Sensors](#sensors)
   - [Photos](#photos)
 - [Software Sketch](#software)
   - [Programming Language](#programming-language)
@@ -42,7 +44,7 @@ Our self-driving car consists of an [Ackerman Steering](https://github.com/TVIST
 ## Chassis
 Our [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) car chassis is designed with a lower base, featuring a Lego component and a sturdy wheel rim to support the upper platform. The upper platform houses a PCB board, where a Raspberry Pi 4 Model B is connected to a camera, an Arduino Nano, and several LEDs that indicate the operational status of the microcontrollers. Additionally, it incorporates a variable converter and a step-down buck converter to ensure efficient power management. Under the lower base, we have integrated a color sensor, which enhances the robot's ability to interact with its environment by detecting specific colors.
 
-We chose a [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) car metal chassis for its precision steering, significantly enhancing our robot's performance. Ideal for high-speed projects, the chassis features an Ackerman steering mechanism that mimics real-world vehicle geometry, offering accurate control, especially for automotive simulations. Designed to handle heavier loads, it provides superior stability and control, outperforming traditional skid-steering systems, with a front crash-absorbing construction for durability in demanding environments.
+We chose a [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) car metal chassis for its precision steering, significantly enhancing our robot's performance. Ideal for high-speed projects, the chassis features an Ackerman steering mechanism that mimics real-world vehicle geometry, offering accurate control, especially for automotive simulations. It is designed to handle heavier loads and provides superior stability and control, outperforming traditional skid-steering systems, with a front crash-absorbing construction for durability in demanding environments.
 <div align="center">
 <img src="Ackerman Steering Chassis.jpg" alt="Ackerman Steering Metal Chassis" width="400" height="400">
 </div>
@@ -53,8 +55,9 @@ We chose a [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_F
 |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/7d53ea98e56dc66d1b2d5453410f25f88bbe4a76/Chassis%20without%20Alteration.jpg" alt="Image" width="431" height="292"/>|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/79305c4250215582e4d3b7d96ede7fff2742e560/Chassis%20with%20Alteration.jpg" alt="Image" width="431" height="292"/> |
 
 We upgraded the motor because of low torque, which improved acceleration and overall performance. This change allows the robot to navigate challenging conditions more easily.
+
 ## Understanding Power and Control
-The vehicle is powered by a single 2200 mAh 3S LiPo battery, providing an output of 11.1 volts. This voltage is routed through LM2596 step-down DC-DC buck converters and a Buck Converter Module USB Voltage Regulator rated at 5A, which efficiently reduces the voltage to safe levels. These converters safeguard the Arduino Nano, Raspberry Pi, and high-torque servo from potential overvoltage damage, ensuring reliable operation and extending the lifespan of all components.
+The vehicle is powered by a single 2200 mAh 3S LiPo battery, producing 11.1 volts. This voltage is routed through LM2596 step-down DC-DC buck converters and a Buck Converter Module USB Voltage Regulator rated at 5A, efficiently reducing the voltage to safe levels. These converters safeguard the Arduino Nano, Raspberry Pi, and high-torque servo from potential overvoltage damage, ensuring reliable operation and extending the lifespan of all components.
 
 The Arduino Nano is connected to a variable step-down buck converter, which regulates the speed of the steering motors. We fine-tuned the power supplied to the motors to ensure that both their speed and the operation of the sensors were optimized, allowing for accurate vehicle navigation. The Arduino Nano communicates with the motors using PWM (Pulse Width Modulation) pins, enabling precise control of their performance.
 
@@ -86,17 +89,21 @@ The Arduino Nano is connected to a variable step-down buck converter, which regu
 
 Our car features rear-wheel drive, powered by a plastic gear dual shaft motor and an LD-1501MG, a high-quality servo. The dual shaft motor is controlled through a variable step-down buck converter, providing enhanced control and feedback for more precise performance.
 
-The chassis was initially equipped with a ready-made brushless dc motor that did not meet our torque expectations. As a result, we decided to modify the chassis and install a dual-shaft motor, which significantly enhanced the car's performance.
+The chassis was initially equipped with a ready-made brushless DC motor that did not meet our torque expectations. As a result, we decided to modify the chassis and install a dual-shaft motor, which significantly enhanced the car's performance.
 
 We opted for servo-based steering because it supports [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) and can operate at higher voltages, enabling us to extract more power from it.
 
-## Sensors
-We have integrated the TCS-230 color sensor to detect the blue and orange lines on the game mat. After careful calibration of the color values,.This calibration process involved adjusting the sensitivity levels and thresholds to enhance the sensor's ability to differentiate between the blue and orange colors, allowing the robot to respond effectively to changes
+| Motor Modification | Servo and Steering |
+|:-------------:|:--------------:|
+|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/79305c4250215582e4d3b7d96ede7fff2742e560/Chassis%20with%20Alteration.jpg" alt="Image" width="431" height="292"/> |
 
-We initially used the TCS-34725 color sensor but found it to be inaccurate when tracking fast-paced movements, resulting in unreliable readings. To address this, we switched to the TCS-230 color sensor, which has proven to be a superior alternative, providing accurate color detection and enhancing our system's responsiveness during rapid manoeuvres
+## Sensors
+We have integrated the TCS-230 color sensor to detect the blue and orange lines on the game mat. After careful calibration of the color values, This calibration process involved adjusting the sensitivity levels and thresholds to enhance the sensor's ability to differentiate between the blue and orange colors, allowing the robot to respond effectively to changes.
+
+We initially used the TCS-34725 color sensor but found it to be inaccurate when tracking fast-paced movements, resulting in unreliable readings. To address this, we switched to the TCS-230 color sensor, which has proven to be a superior alternative, providing accurate color detection and enhancing our system's responsiveness during rapid maneuvers.
 
 We have equipped the front of the car with a wide-angle camera to detect the corners of black walls and identify red and green blocks, preventing collisions. The camera is securely mounted on the Raspberry Pi case using double tape, which ensures precise distance calculations in the algorithm, enhancing navigation and obstacle detection.
-
+___
 # Software
 ## Programming Language 
 ## Open Challenge
@@ -126,7 +133,7 @@ Mr.Manoj-Lab assistant
 # Our Approach
 In our first attempt to tackle the open challenge, we developed a simple maze-solving algorithm using three ultrasonic sensors. However, we encountered excessive static and backward movement issues in the algorithm.
 
-We decided to take a unique approach by combining the functionality of the Ultrasonic Sensor with that of the Color sensor and Gyro Sensor. but this also proved to be inaccurate, so we decided to move with the EV3 Mindstorms 
+We decided to take a unique approach by combining the functionality of the Ultrasonic Sensor with that of the Color sensor and Gyro Sensor. But this also proved to be inaccurate, so we decided to move with the EV3 Mindstorms 
 
 # Problems we encountered on the way
 We decided to use the TCS-34725 for the color sensor.
@@ -140,7 +147,7 @@ The sensor we initially used proved to be highly inaccurate when tracking fast-p
 <div align="center">
 <img src="TCS-230.jpg" alt="TCS-230" width="200" height="200">
 </div>
-We then decided to integrate this gyro sensor and ultrasonic sensor but the ultrasonic sensors gave very inaccurate readings during the robot's run. Therefore, we decided to solve the open challenge by using EV3
+We then decided to integrate this gyro sensor and ultrasonic sensor but the ultrasonic sensors gave very inaccurate readings during the robot's run. Therefore, we decided to solve the open challenge by using EV3.
 
 # Demonstration Videos
 
