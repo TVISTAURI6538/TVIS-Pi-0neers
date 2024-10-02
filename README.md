@@ -59,7 +59,7 @@ The Arduino Nano is connected to a variable step-down buck converter, which regu
 
 <table>
     <tr>
-        <th colspan="3">Individual Components</th>
+        <th colspan="4">Individual Components</th>
     </tr>
     <tr>
       <td>
