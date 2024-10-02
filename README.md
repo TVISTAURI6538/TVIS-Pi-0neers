@@ -107,7 +107,7 @@ We have equipped the front of the car with a wide-angle camera to detect the cor
 
 | Color sensor placed below the chassis | Camera mounted on top of the Raspberry Pi Case |
 |:-------------:|:--------------:|
-|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/197f6f13374c1c13a13e4656a1a5d1e1633b4d48/Color%20sensor%20Attachment%20Pic.png" alt="Image" width="431" height="292"/>|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/3d79248da4fb02d1d307b51a97997534d7b6f35e/Chassis%20with%20Alteration.jpg " alt="Image" width="431" height="292"/> |
+|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/197f6f13374c1c13a13e4656a1a5d1e1633b4d48/Color%20sensor%20Attachment%20Pic.png" alt="Image" width="431" height="292"/>|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/12aa34f148e0594feb91c38ac088f3d06b09e6fa/Camera%20mounted%20on%20top%20of%20the%20Raspberry%20Pi%20case.jpg " alt="Image" width="431" height="292"/> |
 ___
 # Software
 ## Programming Language 
