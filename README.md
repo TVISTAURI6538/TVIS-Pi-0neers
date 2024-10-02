@@ -68,8 +68,8 @@ The Arduino Nano is connected to a variable step-down buck converter, which regu
     </tr>
     <tr>
       <td>
-           <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/0417a12bb013ab10ab0c64578d7a6ebe1776d6b2/Arduino%20Nano.jpg" alt="Image" width="431" height="292"/><br>
-            Arduino Nano
+           <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/3d8c70f1a72dc9ac5bdda654ed983fac5527c502/2200%20mAh%20Lipo%20Battery.jpg" alt="Image" width="431" height="292"/><br>
+            2200 mAh Lipo Battery
         </td>
         <td>
            <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/0417a12bb013ab10ab0c64578d7a6ebe1776d6b2/Arduino%20Nano.jpg" alt="Image" width="431" height="292"/><br>
