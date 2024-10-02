@@ -36,11 +36,12 @@ Our self-driving car consists of an [Ackerman Steering](https://github.com/TVIST
 - Arduino Nano
 - Web Camera
 - Ackerman Steering Metal Chassis 
-- Three HC-SRO4 Ultrasonic Sensors 
 - 2200MAH 3S 80C  LiPo Battery
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
 - TCS-230 Color sensor
-- MPU-6050 Gyro sensor
+- Push Button
+- Dual Shaft Plastic Geared Motor
+- Lego parts and Wheel Rim (For Elevation)
 ## Chassis
 Our [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) car chassis is designed with a lower base, featuring a Lego component and a sturdy wheel rim to support the upper platform. The upper platform houses a PCB board, where a Raspberry Pi 4 Model B is connected to a camera, an Arduino Nano, and several LEDs that indicate the operational status of the microcontrollers. Additionally, it incorporates a variable converter and a step-down buck converter to ensure efficient power management. Under the lower base, we have integrated a color sensor, which enhances the robot's ability to interact with its environment by detecting specific colors.
 
