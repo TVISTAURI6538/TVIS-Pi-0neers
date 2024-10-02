@@ -22,4 +22,9 @@ Once the color data is processed, the robot makes real-time decisions based on t
 ## Servo Motor
 A servo mechanism is a control system that enables precise control over the angular or linear position, velocity, and acceleration of an object. It typically consists of three main components: a motor, a feedback device, and a controller. The motor, which is usually a DC motor or a stepper motor, generates the necessary torque to move the output shaft to a specified position. The feedback device, such as a potentiometer or encoder, measures the current position of the output shaft by converting its rotational position into an electrical signal that can be interpreted by the controller.
 
+<div align="center">
+<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/f95706ee51f7832e8c1620be91d279d89059fdfd/Servo%20Mechanism%20for%20Steering.gif" alt="Servo Motor Mechanism">
+</div>
+<br>
+
 The controller plays a crucial role by receiving the desired position input, often from a microcontroller, and comparing it to the feedback from the feedback device. If a discrepancy exists between the desired and actual positions, the controller adjusts the motor's operation to reduce this error, thereby moving the shaft to the correct position. This combination of components allows servo mechanisms to achieve high precision and repeatability, making them widely used in robotics, automation, and applications requiring accurate positioning, such as camera gimbals, robotic arms, and remote-controlled vehicles.
