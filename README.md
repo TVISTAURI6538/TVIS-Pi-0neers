@@ -8,6 +8,7 @@ ___
 - [Hardware Sketch](#hardware)
   - [Parts Used](#parts-used)
   - [Chassis](#chassis)
+  - [Understanding Power and Control](#understanding-power-and-control)
   - [Photos](#photos)
 - [Software Sketch](#software)
   - [Programming Language](#programming-language)
