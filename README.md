@@ -88,11 +88,11 @@ The Arduino Nano is connected to a variable step-down buck converter, which regu
 
 ## Motors
 
-Our car features rear-wheel drive, powered by a plastic gear dual shaft motor and an LD-1501MG, a high-quality servo. The dual shaft motor is controlled through a variable step-down buck converter, providing enhanced control and feedback for more precise performance.
+Our car features rear-wheel drive, powered by a plastic gear dual shaft motor and an LD-1501MG, a high-quality [servo](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#servo-motor). The dual shaft motor is controlled through a variable step-down buck converter, providing enhanced control and feedback for more precise performance.
 
-The chassis was initially equipped with a ready-made brushless DC motor that did not meet our torque expectations. As a result, we decided to modify the chassis and install a dual-shaft motor, which significantly enhanced the car's performance.
+The chassis was initially equipped with a ready-made 12v gear motor that did not meet our torque expectations. As a result, we decided to modify the chassis and install a dual-shaft motor, which significantly enhanced the car's performance.
 
-We opted for servo-based steering because it supports [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) and can operate at higher voltages, enabling us to extract more power from it.
+We opted for [servo](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#servo-motor)-based steering because it supports [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) and can operate at higher voltages, enabling us to extract more power from it.
 
 | Motor Modification | Servo and Steering |
 |:-------------:|:--------------:|
