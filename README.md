@@ -96,7 +96,7 @@ We opted for servo-based steering because it supports [Ackerman Steering](https:
 
 | Motor Modification | Servo and Steering |
 |:-------------:|:--------------:|
-|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/79305c4250215582e4d3b7d96ede7fff2742e560/Chassis%20with%20Alteration.jpg" alt="Image" width="431" height="292"/> |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/e5decfa270bbb5db659071c277bac58f4f22bad1/Servo%20based%20Steering.png" alt="Image" width="431" height="292"/>|
+|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/79305c4250215582e4d3b7d96ede7fff2742e560/Chassis%20with%20Alteration.jpg" alt="Image" width="431" height="292"/> |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/87c679497f70b1957eaf71e3fe3d9aff04042a1e/Servo%20based%20Steering.png" alt="Image" width="431" height="292"/>|
 
 ## Sensors
 We have integrated the TCS-230 color sensor to detect the blue and orange lines on the game mat. After careful calibration of the color values, This calibration process involved adjusting the sensitivity levels and thresholds to enhance the sensor's ability to differentiate between the blue and orange colors, allowing the robot to respond effectively to changes.
