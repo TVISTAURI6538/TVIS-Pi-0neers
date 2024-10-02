@@ -99,7 +99,7 @@ We opted for servo-based steering because it supports [Ackerman Steering](https:
 |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/fee35bc691b07fb0b37f6e46b393c0c5df1b9d9b/Chassis%20with%20Alteration%20Pic.png" alt="Image" width="431" height="292"/> |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/87c679497f70b1957eaf71e3fe3d9aff04042a1e/Servo%20based%20Steering.png" alt="Image" width="431" height="292"/>|
 
 ## Sensors
-We have integrated the TCS-230 color sensor below the chassis to detect the blue and orange lines on the game mat. After careful calibration of the color values, This calibration process involved adjusting the sensitivity levels and thresholds to enhance the sensor's ability to differentiate between the blue and orange colors, allowing the robot to respond effectively to changes.
+We have integrated the TCS-230 [color sensor](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#color_sensor) below the chassis to detect the blue and orange lines on the game mat. After careful calibration of the color values, This calibration process involved adjusting the sensitivity levels and thresholds to enhance the sensor's ability to differentiate between the blue and orange colors, allowing the robot to respond effectively to changes.
 
 We initially used the TCS-34725 color sensor but found it to be inaccurate when tracking fast-paced movements, resulting in unreliable readings. To address this, we switched to the TCS-230 color sensor, which has proven to be a superior alternative, providing accurate color detection and enhancing our system's responsiveness during rapid maneuvers.
 
