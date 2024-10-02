@@ -18,3 +18,8 @@ The color sensor mechanism works by emitting light onto a surface and detecting 
 <br>
 
 Once the color data is processed, the robot makes real-time decisions based on the detected pattern, such as turning left or right in response to the colors on the game mat. This allows the robot to navigate smoothly and efficiently. The system’s precision ensures accurate color recognition and responsiveness, even during fast-paced movements, enhancing the robot’s ability to react quickly to changes in its environment.
+
+## Servo Motor
+A servo mechanism is a control system that enables precise control over the angular or linear position, velocity, and acceleration of an object. It typically consists of three main components: a motor, a feedback device, and a controller. The motor, which is usually a DC motor or a stepper motor, generates the necessary torque to move the output shaft to a specified position. The feedback device, such as a potentiometer or encoder, measures the current position of the output shaft by converting its rotational position into an electrical signal that can be interpreted by the controller.
+
+The controller plays a crucial role by receiving the desired position input, often from a microcontroller, and comparing it to the feedback from the feedback device. If a discrepancy exists between the desired and actual positions, the controller adjusts the motor's operation to reduce this error, thereby moving the shaft to the correct position. This combination of components allows servo mechanisms to achieve high precision and repeatability, making them widely used in robotics, automation, and applications requiring accurate positioning, such as camera gimbals, robotic arms, and remote-controlled vehicles.
