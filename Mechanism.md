@@ -13,7 +13,7 @@ We selected the Ackermann steering system for several reasons. First, it helps r
 The color sensor mechanism works by emitting light onto a surface and detecting the reflected light across different wavelengths, corresponding to red, green, and blue colors. The TCS-230 sensor then converts the intensity of these colors into frequency signals, with each color having its own frequency range. These signals represent the intensity levels of the detected colors, which are processed by a microcontroller, such as an Arduino Nano or Raspberry Pi. Calibration of the sensor involves adjusting sensitivity levels and thresholds to accurately differentiate between specific colors, like blue and orange while minimizing interference from ambient lighting.
 
 <div align="center">
-<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/0bd9c5a31b9391ca47272338321cdebba609e37c/Ackerman%20Steering.jpg" alt="Ackerman Steering Image">
+<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/0f27da842771c92ef4721414f0df5f12735e8014/Color%20Sensor%20Mechanism.jpg" alt="Color Sensor Mechanism">
 </div>
 <br>
 
