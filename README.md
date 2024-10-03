@@ -5,14 +5,14 @@ ___
 Below is the documentation of the self-autonomous driving car
 ___
 # Contents
-- [Hardware Sketch](#hardware)
+- [**Hardware Sketch**](#hardware)
   - [Parts Used](#parts-used)
   - [Chassis](#chassis)
   - [Understanding Power and Control](#understanding-power-and-control)
   - [Motors](#motors)
   - [Sensors](#sensors)
   - [Photos](#photos)
-- [Software Sketch](#software)
+- [**Software Sketch**](#software)
   - [Programming Language](#programming-language)
   - [Open Challenge](#open-challenge)
      - [Ultrasonic Sensor](#ultrasonic-sensor)
@@ -23,9 +23,10 @@ ___
        - [Sensor](#sensor)
        - [Sensor](#sensor)
        - [Sensor](#sensor)
-- [Our Team](#our-team)
-- [Our Approach](#our-approach)
-- [Problems we encountered on the way](#problems-we-encountered-on-the-way)
+- [**Our Team**](#our-team)
+- [**Tackling the Journey**](#tackling-the-journey)
+  - [Our Approach](#our-approach)
+  - [Problems we encountered on the way](#problems-we-encountered-on-the-way)
 - [Demonstration Videos](#demonstration-videos)
  ___
  # Hardware
@@ -138,12 +139,14 @@ Mr.Akash Singh-Robotics Trainer
 Mrs.Hemalatha-VKP Techsavy Coordinator
 
 Mr.Manoj-Lab assistant
-# Our Approach
+
+# Tackling the Journey
+## Our Approach
 In our first attempt to tackle the open challenge, we developed a simple maze-solving algorithm using three ultrasonic sensors. However, we encountered excessive static and backward movement issues in the algorithm.
 
 We decided to take a unique approach by combining the functionality of the Ultrasonic Sensor with that of the Color sensor and Gyro Sensor. But this also proved to be inaccurate, so we decided to move with the EV3 Mindstorms 
 
-# Problems we encountered on the way
+## Problems we encountered on the way
 We decided to use the TCS-34725 for the color sensor.
 
 <div align="center">
