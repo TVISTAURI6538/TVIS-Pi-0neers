@@ -114,6 +114,8 @@ We have equipped the front of the car with a wide-angle camera to detect the cor
 
 ___
 # Software
+# Photos
+
 ## Programming Language 
 ## Open Challenge
 ### Ultrasonic Sensor
