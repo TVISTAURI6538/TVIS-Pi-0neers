@@ -22,7 +22,7 @@ ___
 - [**Code and Pseudocode Overview**](#code-and-pseudocode-overview)
 - [**Our Team**](#our-team)
 - [**Our Journey**](#our-journey)
-  - [Problems Encountered On The Way](#problems-we-encountered-on-the-way)
+  - [Problems Encountered On The Way](#problems-encountered-on-the-way)
     - [Problems Faced During Wall Avoidance](#problems-faced-during-wall-avoidance)
     - [Problems Faced During Traffic Sign Identification](#problems-faced-during-traffic-sign-identification)
     - [Problems Faced During Lap Count](#problems-faced-during-lap-count)
