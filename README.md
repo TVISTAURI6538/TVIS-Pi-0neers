@@ -114,7 +114,50 @@ We have equipped the front of the car with a wide-angle camera to detect the cor
 <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/ae7cb27951d7d5ba86243a4421924a280af31580/Wiring%20Diagram.png" alt="Image" width="1000" height="600"/>
 
 ___
-# Software
+# In depth algorithm explanation
+there are manily 5 aspects on which our bumble b is based on 
+wall avoidance
+traffic sign idnetification 
+lap count 
+movement
+feedback mechanism
+
+wall avoidance 
+We decided to use the camera and raspberry pi to tackle the wall avoidance task. 
+we decided to take advantage of the black color of the walls rather than claculating distance. in order to do this, we used the opencv library to sucessfuly avoid the black walls. 
+We first calibrated the system by defining upper and lower HSV(hue saturation value) values for the black wall detection 
+then we defined a fixed horizontal line below the center of the frame captured by the camera using the cv2.line function. this served as a reference point for wall detection 
+the wall avoidance logic  was programmed such that when any black mask comes in contact with the right side of the line, the robot will turn left and if any black mask comes in contact with the left side of the horizontal line, the robot will turn right.
+this logic helped us to sucessfuly avoid the black walls.
+
+trffic sign identification 
+we again used the raspberry pi and camera to tackle this task as well 
+we first defined the upper and lower hsv values for the red and green traffic signs and applied masking and contouring techniques to isolate them. we then used the cv2.boundingrect function to create bounding rectangles for the visualization of the detected traffic sign 
+for the turn left and turn right logic for the green and red traffic sign respectively, we had to define two fixed margins in order to accurately steer past the red and green traffic signs
+to ensure precise and smooth movement, we divided the frame into 3 zones(left,middle,right) using two fixed margins. this allowed the robot to adjust its turning based on the sign's position.
+if the red traffic sign is detected in the middle or right zone the robot will turn right until the red sign moves into the left zone(desired zone). similarly, if the green traffic sign is detectd in the middle or left zone, the robot will turn left until the green sign is in the right zone(desired zone).
+once the traffic sign is in the desired zone, the robot resumes the wall avoidance logic givng priority to the traffic sign detection logic
+to deal with the issue of detecting small red and green objects caused by reflections on the mat, we set a minimum size threshold for the bounding rectangles in order to filter out noise effectively 
+We also encountered instances where both red and green signs were detected simulatenoeusly. to handle this, we set a comparison between the bounding rectangles of the red and green traffic signs, ensuring that only the larger rectangle (closer traffic sign was detected and prioritised)
+
+lap count 
+for tracking laps, we used a TCS-230 Color sensor controled by a arduino nano moutned on underside of the chassis.
+First, the sensor was calibrated to distinguish betwene blue, ornage and white colors
+We leveraged the blue and orange lines present on the corner sections of the track 
+When the color sensor detects orange, the robot temporaily halts color detecton for 3 seconds using the milis function. During this time, the robot turns right for 1 second and then resumes wall and traffic sign avoidance. a similar process occurs when blue is detected but the robot turns left instead of right 
+in order to count the laps, a variable i = 0 was initalized to track the laps. each time, a color isdetected the variable increments by factor 1. when i reaches 12 (i.e 3 laps were completed) the code runs for an additional 3 seconds before stopping the robt at the same seciton where it started 
+
+movement 
+For propulsion, we emplyed a high torque bow motor while steering was controlled via a servo motor attached to an ackerman steering mechanism.
+we defined functions for forward movement, left turn, right turn and stopcar fucntion. the robot uses these functions to respond to the feedback given by the raspberry pi, allowing it to adjust its movement accordingly 
+
+feedback mechanism
+this feedback mechanism is nothing but the communication betwene raspberry pi and arduino nano.
+to establish communciation between arduino and raspberry pi, we utilzied the raspberry pi's GPIO.high functionality in conjuction with the arduino's digitalRead function 
+When the black wall is detected on one sdie of the horizontal line or the red or green sign is not within the desired zones, the raspberyr pi outputs the 3.3 volt signal to an designated pin connected to the arduino. 
+using the digitalRead function, the arduino detects this input and responds accoridngly 
+
+
 # Photos
 (Click on the photos to view them in a larger size.)
 |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/f895f5b59b883f9c397050a92661ed500ccb63f2/Bumble%20B%20Front.jpg " alt="Image" width="431" height="400"/>| <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20Back.jpg" alt="Image" width="431" height="400"/>| 
@@ -149,13 +192,8 @@ Mrs.Hemalatha-Team Coordinator
 
 Mr.Manoj-Lab assistant
 
-# Tackling the Journey
-## Our Approach
-In our first attempt to tackle the open challenge, we developed a simple maze-solving algorithm using three ultrasonic sensors. However, we encountered excessive static and backward movement issues in the algorithm.
-
-We decided to take a unique approach by combining the functionality of the Ultrasonic Sensor with that of the Color sensor and Gyro Sensor. But this also proved to be inaccurate, so we decided to move with the EV3 Mindstorms 
-
-## Problems we encountered on the way
+# Our Journey
+## Challenges Encountered Throughout the Project
 We decided to use the TCS-34725 for the color sensor.
 
 <div align="center">
@@ -167,7 +205,41 @@ The sensor we initially used proved to be highly inaccurate when tracking fast-p
 <div align="center">
 <img src="TCS-230.jpg" alt="TCS-230" width="200" height="200">
 </div>
-We then decided to integrate this gyro sensor and ultrasonic sensor but the ultrasonic sensors gave very inaccurate readings during the robot's run. Therefore, we decided to solve the open challenge by using EV3.
+
+After assessing the situation, we decided to integrate a gyro sensor and an ultrasonic sensor. However, we found that the ultrasonic sensors provided very inaccurate readings during the robot's operation. To address this challenge, we considered using the EV3 system, but since neither of us had prior experience with it, we decided to set that option aside.
+
+Ultimately, we opted to use the Raspberry Pi for wall avoidance and for managing the logic related to red and green pillars. Meanwhile, the Arduino Nano was chosen to handle thrust, steering, and lap counting, providing a more reliable solution for our needs.
+
+
+### Problems Faced During Wall Avoidance
+- Complexity of Mathematical Distance Calculation:
+We initially opted for a mathematical approach to determine the distance of the walls relative to the robot. However, we quickly realized that this method was overly complex. We found that the problem could be tackled much more simply using the horizontal line logic described above.
+
+- Calibration of the Horizontal Line:
+Another challenge we encountered was the constant need to calibrate the ordinate of the horizontal line. After some adjustments and testing, we ultimately identified the optimal placement for the horizontal line, which improved our wall avoidance functionality.
+
+
+### Problems Faced During Traffic Sign Identification
+- Detection of Small Red and Green Contours:
+The camera often detected small red and green contours due to reflections on the mat. To solve this, we set a minimum size threshold for the bounding rectangles, effectively filtering out noise and avoiding false detections.
+
+- Simultaneous Detection of Red and Green Signs:
+We encountered issues with both red and green traffic signs being detected at the same time. To address this, we implemented a comparison between the bounding rectangles of the two signs, ensuring that only the larger rectangle (indicating the closer sign) was detected and prioritized.
+
+- Confusion Between Traffic Signs and Black Walls:
+The robot became confused when it detected both black walls and traffic signs simultaneously. To resolve this, we programmed the robot to proceed with wall avoidance only when the traffic signs were in their designated zones, allowing for more accurate navigation.
+
+### Problems Faced During Lap Count
+Initially, we implemented the ```i++``` logic for the robot to count laps, which worked in theory. However, the robot would stop immediately upon detecting the last color, rather than completing the lap and stopping in the same section where it started. To resolve this, we incorporated a combination of boolean logic and the ```millis()``` function, ensuring the robot correctly finishes the lap before stopping in the designated section.
+
+### Problems Faced During the Feedback Mechanism
+Initially, we attempted to establish communication between the Raspberry Pi and Arduino using serial communication over a USB cable. However, this approach proved highly unreliable, as the Arduino often failed to read the commands sent by the Raspberry Pi. To overcome this issue, we switched to using the ```GPIO.high``` and ```digitalRead``` logic, as explained above, which significantly improved communication accuracy.
+
 
 # Demonstration Videos
+| Open Challenge | Obstacle Challenge  |
+|:-------------:|:--------------:|
+|[![Watch the video](https://img.youtube.com/vi/EHTh-pLtoqI/maxresdefault.jpg)](https://www.youtube.com/watch?v=EHTh-pLtoqI)
+
+
 
