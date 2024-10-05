@@ -11,23 +11,22 @@ ___
   - [Understanding Power and Control](#understanding-power-and-control)
   - [Motors](#motors)
   - [Sensors](#sensors)
-  - [Photos](#photos)
-- [**Software Sketch**](#software)
-  - [Programming Language](#programming-language)
-  - [Open Challenge](#open-challenge)
-     - [Ultrasonic Sensor](#ultrasonic-sensor)
-     - [Gyro Sensor](#gyro-sensor)
-     - [Color Sensor](#color-sensor)
-  - [Obstacle Challenge](#obstacle-challenge)
-    - [Improving image processing and predictions through the camera](#improving-image-processing-and-predictions-through-the-camera)
-       - [Sensor](#sensor)
-       - [Sensor](#sensor)
-       - [Sensor](#sensor)
+- [**Wiring Diagram**](#wiring-diagram)
+- [**Photos**](#photos)
+- [**In Depth Algorithm Explanation**](#in-depth-algorithm-explanation)
+  - [Wall Avoidance](#wall-avoidance)
+  - [Traffic Sign Identification](#traffic-sign-identification)
+  - [Lap Count](#lap-count)
+  - [Movement](#movement)
+  - [Feedback Mechnaism](#feedback-mechanism)
+- [**Code and Pseudocode Overview**](#code-and-pseudocode-overview)
 - [**Our Team**](#our-team)
-- [**Tackling the Journey**](#tackling-the-journey)
-  - [Our Approach](#our-approach)
-  - [Problems we encountered on the way](#problems-we-encountered-on-the-way)
-- [Demonstration Videos](#demonstration-videos)
+- [**Our Journey**](#our-journey)
+  - [Problems Encountered On The Way](#problems-we-encountered-on-the-way)
+    - [Problems Faced During Wall Avoidance](#problems-faced-during-wall-avoidance)
+    - [Problems Faced During Traffic Sign Identification](#problems-faced-during-traffic-sign-identification)
+    - [Problems Faced During Lap Count](#problems-faced-during-lap-count)
+    - [Problems Faced During the Feedback Mechanism](#problems-faced-during-the-feedback-mechanism)
  ___
  # Hardware
 Our self-driving car consists of an [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#ackerman-steering)  metal chassis and integrates standard components such as cameras, sensors, and electrical systems to optimize motor torque, performance, etc.
@@ -110,14 +109,22 @@ We have equipped the front of the car with a wide-angle camera to detect the cor
 |:-------------:|:--------------:|
 |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/197f6f13374c1c13a13e4656a1a5d1e1633b4d48/Color%20sensor%20Attachment%20Pic.png" alt="Image" width="431" height="292"/>|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/12aa34f148e0594feb91c38ac088f3d06b09e6fa/Camera%20mounted%20on%20top%20of%20the%20Raspberry%20Pi%20case.jpg " alt="Image" width="431" height="292"/> |
 
-## Wiring diagram
+___
+## Wiring Diagram
 <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/ae7cb27951d7d5ba86243a4421924a280af31580/Wiring%20Diagram.png" alt="Image" width="1000" height="600"/>
 
+___
+# Photos
+(Click on the photos to view them in a larger size.)
+|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/f895f5b59b883f9c397050a92661ed500ccb63f2/Bumble%20B%20Front.jpg " alt="Image" width="431" height="400"/>| <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20Back.jpg" alt="Image" width="431" height="400"/>| 
+| -------- | -------- |
+| <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20L_Side.jpg" alt="Image" width="431" height="340"/>  |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20R_Side.jpg" alt="Image" width="431" height="340"/>| 
+| <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20Top.jpg" alt="Image" width="431" height="400"/> | <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20Bottom.jpg" alt="Image" width="431" height="400"/> | 
 ___
 # In Depth Algorithm Explanation
 There are mainly 5 aspects on which our Bumble B is based on 
 - **Wall Avoidance**
-- **Traffic Sign Idnetification**
+- **Traffic Sign Identification**
 - **Lap Count**
 - **Movement**
 - **Feedback Mechanism**
@@ -138,7 +145,7 @@ There are mainly 5 aspects on which our Bumble B is based on
 ## Traffic Sign Identification
 For effective traffic sign identification, we utilized a Raspberry Pi and a camera, implementing a systematic approach to detect and navigate around red and green traffic signs.
 
-- **Task Overview**: Use a Raspberry Pi and camera for traffic sign identification.
+- **Task Overview**: Use a Raspberry Pi and camera to identify traffic signs.
 
 - **HSV Calibration**: Define upper and lower HSV values for red and green traffic signs, applying masking and contouring techniques to isolate them.
 
@@ -151,16 +158,16 @@ For effective traffic sign identification, we utilized a Raspberry Pi and a came
 - **Turning Logic**:
   - If the red traffic sign is detected in the middle or right zone, the robot turns right until the sign moves into the left zone (desired zone).
   - If the green traffic sign is detected in the middle or left zone, the robot turns left until it moves into the right zone (desired zone).
-    
+
+| Red Traffic Sign Identification | Green Traffic Sign Identification |
+|:-------------:|:--------------:|
+|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/5f5d565ff3d284695875cae980f7bd278db93bfa/rasp1.png" alt="Red Traffic Sign Identification" width="431" height="292"/>|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/5f5d565ff3d284695875cae980f7bd278db93bfa/rasp2.png" alt="Green Traffic Sign Identification" width="431" height="292"/> |
+
 - **Logic Resumption**: Once the traffic sign is in the desired zone, the robot resumes wall avoidance logic, prioritizing traffic sign detection.
 
 - **Noise Filtering**: To mitigate the detection of small red and green objects due to reflections on the mat, a minimum size threshold for the bounding rectangles is established.
 
-- **Simultaneous Detection Handling**: In instances where both red and green signs are detected simultaneously, compare their bounding rectangles and prioritize the larger one (indicating the closer traffic sign).
-
-| Red Traffic Sign Identification | Green Traffic Sign Identification |
-|:-------------:|:--------------:|
-|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/197f6f13374c1c13a13e4656a1a5d1e1633b4d48/Color%20sensor%20Attachment%20Pic.png" alt="Image" width="431" height="292"/>|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/12aa34f148e0594feb91c38ac088f3d06b09e6fa/Camera%20mounted%20on%20top%20of%20the%20Raspberry%20Pi%20case.jpg " alt="Image" width="431" height="292"/> |
+- **Simultaneous Detection Handling**: When both red and green signs are detected simultaneously, compare their bounding rectangles and prioritize the larger one (indicating the closer traffic sign).
 
 ## Lap Count 
 For tracking laps, we utilized a TCS-230 color sensor controlled by an Arduino Nano, which is mounted on the underside of the chassis. The sensor was calibrated to effectively distinguish between blue, orange, and white colors, allowing for accurate detection of the track’s markings.
@@ -181,13 +188,10 @@ The feedback mechanism consists of the communication between the Raspberry Pi an
   - When a black wall is detected on one side of the horizontal line or when the red or green sign is not within the desired zones, the Raspberry Pi outputs a 3.3-volt signal to a designated pin connected to the Arduino.
   - The Arduino uses the ```digitalRead()``` function to detect this input and respond accordingly.
 
-# Photos
-(Click on the photos to view them in a larger size.)
-|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/f895f5b59b883f9c397050a92661ed500ccb63f2/Bumble%20B%20Front.jpg " alt="Image" width="431" height="400"/>| <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20Back.jpg" alt="Image" width="431" height="400"/>| 
-| -------- | -------- |
-| <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20L_Side.jpg" alt="Image" width="431" height="340"/>  |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20R_Side.jpg" alt="Image" width="431" height="340"/>| 
-| <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20Top.jpg" alt="Image" width="431" height="400"/> | <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20Bottom.jpg" alt="Image" width="431" height="400"/> | 
+___
+# Code and Pseudocode Overview
 
+___
 # Our Team
 **Vaishant Ananth** is an 11th-grade student, he aspires to become a robotic engineer passionate about coding and hardware. He is actively involved in various technology challenges and dedicated to mastering both the software and hardware aspects of robotics.
 
@@ -206,8 +210,9 @@ Mrs.Hemalatha-Team Coordinator
 
 Mr.Manoj-Lab assistant
 
+___
 # Our Journey
-## Challenges Encountered Throughout the Project
+## Problems Encountered On The Way
 We decided to use the TCS-34725 for the color sensor.
 
 <div align="center">
@@ -247,7 +252,7 @@ Initially, we implemented the ```i++``` logic for the robot to count laps, which
 ### Problems Faced During the Feedback Mechanism
 Initially, we attempted to establish communication between the Raspberry Pi and Arduino using serial communication over a USB cable. However, this approach proved highly unreliable, as the Arduino often failed to read the commands sent by the Raspberry Pi. To overcome this issue, we switched to using the ```GPIO.high``` and ```digitalRead``` logic, as explained above, which significantly improved communication accuracy.
 
-
+___
 # Demonstration Videos
 <table>
     <tr>
@@ -266,9 +271,3 @@ Initially, we attempted to establish communication between the Raspberry Pi and 
             </a>
         </td>
     </tr>
-
-
-
-
-
-
