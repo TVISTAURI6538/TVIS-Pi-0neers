@@ -89,7 +89,7 @@ The Arduino Nano is connected to a variable step-down buck converter, which regu
 
 ## Motors
 
-Our car features rear-wheel drive, powered by a plastic gear dual shaft motor and an LD-1501MG, a high-quality [servo](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#servo-motor). The dual shaft motor is controlled through a variable step-down buck converter, providing enhanced control and feedback for more precise performance.
+"Our car features a rear-wheel drive system powered by a plastic gear dual shaft motor and an LD-1501MG high-quality [servo](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#servo-motor).. The dual shaft motor is precisely controlled through a combination of a variable step-down buck converter and an L293D motor driver, providing enhanced control and feedback for improved performance and maneuverability."
 
 The chassis was initially equipped with a ready-made 12v gear motor that did not meet our torque expectations. As a result, we decided to modify the chassis and install a dual-shaft motor, which significantly enhanced the car's performance.
 
