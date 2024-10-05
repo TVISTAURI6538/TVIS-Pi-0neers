@@ -124,10 +124,15 @@ There are mainly 5 aspects on which our Bumble B is based on
 
 ## Wall Avoidance 
 - We decided to use a camera and Raspberry Pi to tackle the wall avoidance task.
+  
 - We took advantage of the black color of the walls rather than calculating distance. To achieve this, we used the OpenCV library to successfully avoid the black walls.
+  
 - First, we calibrated the system by defining upper and lower HSV (Hue, Saturation, Value) values for black wall detection.
+
 - Next, we defined a fixed horizontal line below the center of the camera frame using the ```cv2.line``` function. This line served as a reference point for wall detection.
+  
 - The wall avoidance logic was programmed such that when any black mask comes into contact with the right side of the line, the robot will turn left; if any black mask comes into contact with the left side of the horizontal line, the robot will turn right.
+  
 - This logic effectively enabled us to avoid black walls successfully.
 
 ## Traffic Sign Identification
