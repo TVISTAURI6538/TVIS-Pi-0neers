@@ -114,49 +114,67 @@ We have equipped the front of the car with a wide-angle camera to detect the cor
 <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/ae7cb27951d7d5ba86243a4421924a280af31580/Wiring%20Diagram.png" alt="Image" width="1000" height="600"/>
 
 ___
-# In depth algorithm explanation
-there are manily 5 aspects on which our bumble b is based on 
-wall avoidance
-traffic sign idnetification 
-lap count 
-movement
-feedback mechanism
+# In Depth Algorithm Explanation
+There are mainly 5 aspects on which our Bumble B is based on 
+- **Wall Avoidance**
+- **Traffic Sign Idnetification**
+- **Lap Count**
+- **Movement**
+- **Feedback Mechanism**
 
-wall avoidance 
-We decided to use the camera and raspberry pi to tackle the wall avoidance task. 
-we decided to take advantage of the black color of the walls rather than claculating distance. in order to do this, we used the opencv library to sucessfuly avoid the black walls. 
-We first calibrated the system by defining upper and lower HSV(hue saturation value) values for the black wall detection 
-then we defined a fixed horizontal line below the center of the frame captured by the camera using the cv2.line function. this served as a reference point for wall detection 
-the wall avoidance logic  was programmed such that when any black mask comes in contact with the right side of the line, the robot will turn left and if any black mask comes in contact with the left side of the horizontal line, the robot will turn right.
-this logic helped us to sucessfuly avoid the black walls.
+## Wall Avoidance 
+- We decided to use a camera and Raspberry Pi to tackle the wall avoidance task.
+- We took advantage of the black color of the walls rather than calculating distance. To achieve this, we used the OpenCV library to successfully avoid the black walls.
+- First, we calibrated the system by defining upper and lower HSV (Hue, Saturation, Value) values for black wall detection.
+- Next, we defined a fixed horizontal line below the center of the camera frame using the ```cv2.line``` function. This line served as a reference point for wall detection.
+- The wall avoidance logic was programmed such that when any black mask comes into contact with the right side of the line, the robot will turn left; if any black mask comes into contact with the left side of the horizontal line, the robot will turn right.
+- This logic effectively enabled us to avoid black walls successfully.
 
-trffic sign identification 
-we again used the raspberry pi and camera to tackle this task as well 
-we first defined the upper and lower hsv values for the red and green traffic signs and applied masking and contouring techniques to isolate them. we then used the cv2.boundingrect function to create bounding rectangles for the visualization of the detected traffic sign 
-for the turn left and turn right logic for the green and red traffic sign respectively, we had to define two fixed margins in order to accurately steer past the red and green traffic signs
-to ensure precise and smooth movement, we divided the frame into 3 zones(left,middle,right) using two fixed margins. this allowed the robot to adjust its turning based on the sign's position.
-if the red traffic sign is detected in the middle or right zone the robot will turn right until the red sign moves into the left zone(desired zone). similarly, if the green traffic sign is detectd in the middle or left zone, the robot will turn left until the green sign is in the right zone(desired zone).
-once the traffic sign is in the desired zone, the robot resumes the wall avoidance logic givng priority to the traffic sign detection logic
-to deal with the issue of detecting small red and green objects caused by reflections on the mat, we set a minimum size threshold for the bounding rectangles in order to filter out noise effectively 
-We also encountered instances where both red and green signs were detected simulatenoeusly. to handle this, we set a comparison between the bounding rectangles of the red and green traffic signs, ensuring that only the larger rectangle (closer traffic sign was detected and prioritised)
+## Traffic Sign Identification
+For effective traffic sign identification, we utilized a Raspberry Pi and a camera, implementing a systematic approach to detect and navigate around red and green traffic signs.
 
-lap count 
-for tracking laps, we used a TCS-230 Color sensor controled by a arduino nano moutned on underside of the chassis.
-First, the sensor was calibrated to distinguish betwene blue, ornage and white colors
-We leveraged the blue and orange lines present on the corner sections of the track 
-When the color sensor detects orange, the robot temporaily halts color detecton for 3 seconds using the milis function. During this time, the robot turns right for 1 second and then resumes wall and traffic sign avoidance. a similar process occurs when blue is detected but the robot turns left instead of right 
-in order to count the laps, a variable i = 0 was initalized to track the laps. each time, a color isdetected the variable increments by factor 1. when i reaches 12 (i.e 3 laps were completed) the code runs for an additional 3 seconds before stopping the robt at the same seciton where it started 
+- **Task Overview**: Use a Raspberry Pi and camera for traffic sign identification.
 
-movement 
-For propulsion, we emplyed a high torque bow motor while steering was controlled via a servo motor attached to an ackerman steering mechanism.
-we defined functions for forward movement, left turn, right turn and stopcar fucntion. the robot uses these functions to respond to the feedback given by the raspberry pi, allowing it to adjust its movement accordingly 
+- **HSV Calibration**: Define upper and lower HSV values for red and green traffic signs, applying masking and contouring techniques to isolate them.
 
-feedback mechanism
-this feedback mechanism is nothing but the communication betwene raspberry pi and arduino nano.
-to establish communciation between arduino and raspberry pi, we utilzied the raspberry pi's GPIO.high functionality in conjuction with the arduino's digitalRead function 
-When the black wall is detected on one sdie of the horizontal line or the red or green sign is not within the desired zones, the raspberyr pi outputs the 3.3 volt signal to an designated pin connected to the arduino. 
-using the digitalRead function, the arduino detects this input and responds accoridngly 
+- **Bounding Rectangles**: Employ the ```cv2.boundingRect``` function to create bounding rectangles for visualizing the detected traffic signs.
 
+- **Frame Division**:
+  - Define two fixed margins to create three zones (left, middle, right) for accurate steering past the signs.
+  - This segmentation allows the robot to adjust its turning based on the sign's position.
+  
+- **Turning Logic**:
+  - If the red traffic sign is detected in the middle or right zone, the robot turns right until the sign moves into the left zone (desired zone).
+  - If the green traffic sign is detected in the middle or left zone, the robot turns left until it moves into the right zone (desired zone).
+    
+- **Logic Resumption**: Once the traffic sign is in the desired zone, the robot resumes wall avoidance logic, prioritizing traffic sign detection.
+
+- **Noise Filtering**: To mitigate the detection of small red and green objects due to reflections on the mat, a minimum size threshold for the bounding rectangles is established.
+
+- **Simultaneous Detection Handling**: In instances where both red and green signs are detected simultaneously, compare their bounding rectangles and prioritize the larger one (indicating the closer traffic sign).
+
+| Red Traffic Sign Identification | Green Traffic Sign Identification |
+|:-------------:|:--------------:|
+|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/197f6f13374c1c13a13e4656a1a5d1e1633b4d48/Color%20sensor%20Attachment%20Pic.png" alt="Image" width="431" height="292"/>|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/12aa34f148e0594feb91c38ac088f3d06b09e6fa/Camera%20mounted%20on%20top%20of%20the%20Raspberry%20Pi%20case.jpg " alt="Image" width="431" height="292"/> |
+
+## Lap Count 
+For tracking laps, we utilized a TCS-230 color sensor controlled by an Arduino Nano, which is mounted on the underside of the chassis. The sensor was calibrated to effectively distinguish between blue, orange, and white colors, allowing for accurate detection of the track’s markings.
+
+We leveraged the blue and orange lines present at the corner sections of the track. When the color sensor detects orange, the robot temporarily halts color detection for 3 seconds using the ```millis()``` function. During this pause, the robot turns right for 1 second before resuming its wall and traffic sign avoidance routines. A similar process occurs when blue is detected, but in this case, the robot turns left instead of right.
+
+To count the laps, we initialized a variable ```i = 0``` to keep track of the number of laps completed. Each time a color is detected, the variable increments by a factor of 1. Once ```i``` reaches 12 (indicating that 3 laps have been completed), the code executes an additional 3-second run before stopping the robot at the same section where it started.
+
+## Movement
+- **Propulsion and Steering**: The robot is propelled by a high-torque dual shaft motor and steered using a servo motor connected to an Ackerman steering mechanism.
+
+- **Dynamic Control**: Functions for forward movement, ```leftTurn```, ```rightTurn```, and ```stopCar``` are defined, allowing the robot to respond to feedback from the Raspberry Pi and adjust its movements accordingly.
+  
+## Feedback Mechanism
+The feedback mechanism consists of the communication between the Raspberry Pi and the Arduino Nano. To establish this communication, we utilized the Raspberry Pi's ```GPIO.HIGH``` functionality in conjunction with the Arduino's ```digitalRead()``` function.
+
+- **Detection and Response**:
+  - When a black wall is detected on one side of the horizontal line or when the red or green sign is not within the desired zones, the Raspberry Pi outputs a 3.3-volt signal to a designated pin connected to the Arduino.
+  - The Arduino uses the ```digitalRead()``` function to detect this input and respond accordingly.
 
 # Photos
 (Click on the photos to view them in a larger size.)
@@ -165,15 +183,6 @@ using the digitalRead function, the arduino detects this input and responds acco
 | <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20L_Side.jpg" alt="Image" width="431" height="340"/>  |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20R_Side.jpg" alt="Image" width="431" height="340"/>| 
 | <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20Top.jpg" alt="Image" width="431" height="400"/> | <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/9b13e4e1826c967ac8d9e286e4ea64abec91dd87/Bumble%20B%20Bottom.jpg" alt="Image" width="431" height="400"/> | 
 
-## Programming Language 
-## Open Challenge
-### Ultrasonic Sensor
-### Gyro Sensor
-### Color Sensor
-## Obstacle Challenge 
-### Improving image processing and predictions through the camera.
-#### Sensor
-#### Sensor
 # Our Team
 **Vaishant Ananth** is an 11th-grade student, he aspires to become a robotic engineer passionate about coding and hardware. He is actively involved in various technology challenges and dedicated to mastering both the software and hardware aspects of robotics.
 
@@ -210,23 +219,21 @@ After assessing the situation, we decided to integrate a gyro sensor and an ultr
 
 Ultimately, we opted to use the Raspberry Pi for wall avoidance and for managing the logic related to red and green pillars. Meanwhile, the Arduino Nano was chosen to handle thrust, steering, and lap counting, providing a more reliable solution for our needs.
 
-
 ### Problems Faced During Wall Avoidance
-- Complexity of Mathematical Distance Calculation:
+- **Complexity of Mathematical Distance Calculation**:
 We initially opted for a mathematical approach to determine the distance of the walls relative to the robot. However, we quickly realized that this method was overly complex. We found that the problem could be tackled much more simply using the horizontal line logic described above.
 
-- Calibration of the Horizontal Line:
+- **Calibration of the Horizontal Line**:
 Another challenge we encountered was the constant need to calibrate the ordinate of the horizontal line. After some adjustments and testing, we ultimately identified the optimal placement for the horizontal line, which improved our wall avoidance functionality.
 
-
 ### Problems Faced During Traffic Sign Identification
-- Detection of Small Red and Green Contours:
+- **Detection of Small Red and Green Contours**:
 The camera often detected small red and green contours due to reflections on the mat. To solve this, we set a minimum size threshold for the bounding rectangles, effectively filtering out noise and avoiding false detections.
 
-- Simultaneous Detection of Red and Green Signs:
+- **Simultaneous Detection of Red and Green Signs**:
 We encountered issues with both red and green traffic signs being detected at the same time. To address this, we implemented a comparison between the bounding rectangles of the two signs, ensuring that only the larger rectangle (indicating the closer sign) was detected and prioritized.
 
-- Confusion Between Traffic Signs and Black Walls:
+- **Confusion Between Traffic Signs and Black Walls**:
 The robot became confused when it detected both black walls and traffic signs simultaneously. To resolve this, we programmed the robot to proceed with wall avoidance only when the traffic signs were in their designated zones, allowing for more accurate navigation.
 
 ### Problems Faced During Lap Count
@@ -237,9 +244,26 @@ Initially, we attempted to establish communication between the Raspberry Pi and 
 
 
 # Demonstration Videos
-| Open Challenge | Obstacle Challenge  |
-|:-------------:|:--------------:|
-|[![Watch the video](https://img.youtube.com/vi/EHTh-pLtoqI/maxresdefault.jpg)](https://www.youtube.com/watch?v=EHTh-pLtoqI)
+<table>
+    <tr>
+        <th>Open Challenge</th>
+        <th>Obstacle Challenge</th>
+    </tr>
+    <tr>
+        <td>
+            <a href="https://www.youtube.com/watch?v=EHTh-pLtoqI" target="_blank">
+                <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/b3e7fbf52a978b17ca052f3a2bb099cd07aaf9ab/Open%20Challenge%20Opening%20Page.png" alt="Open Challenge" width="800">
+            </a>
+        </td>
+        <td>
+            <a href="https://www.youtube.com/watch?v=NZUAv9LCASU" target="_blank">
+                <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/b3e7fbf52a978b17ca052f3a2bb099cd07aaf9ab/Obstacle%20Challenge%20Opening%20Page.png" alt=" Obstacle Challenge" width="800">
+            </a>
+        </td>
+    </tr>
+
+
+
 
 
 
