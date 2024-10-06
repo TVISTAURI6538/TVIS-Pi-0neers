@@ -1,4 +1,4 @@
-![Logo of TVIS-PiOneers](Logo.png)
+![Logo of TVIS-PiOneers](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/1838a45001ecb06673d1ae47b39eb53f2fcf61a1/Photos/Logo.png)
 ___
 **GitHub repository for WRO INDIA Nationals Team TVIS-Pi0neers Future Engineers 2024. It contains our work on building a robot for self-assisted track navigation.**
 
@@ -39,12 +39,12 @@ Our self-driving car consists of an [Ackerman Steering](https://github.com/TVIST
 - Ackerman Steering Metal Chassis 
 - 2200MAH 3S 80C  LiPo Battery
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
-- TCS-230 Color sensor
+- TCS-230 [color sensor](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#color-sensor)
 - Push Button
 - Dual Shaft Plastic Geared Motor
 - Lego parts and Wheel Rim (For Elevation)
 ## Chassis
-Our [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) car chassis is designed with a lower base, featuring a Lego component and a sturdy wheel rim to support the upper platform. The upper platform houses a PCB board, where a Raspberry Pi 4 Model B is connected to a camera, an Arduino Nano, and several LEDs that indicate the operational status of the microcontrollers. Additionally, it incorporates a variable converter and a step-down buck converter to ensure efficient power management. Under the lower base, we have integrated a color sensor, which enhances the robot's ability to interact with its environment by detecting specific colors.
+Our [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) car chassis is designed with a lower base, featuring a Lego component and a sturdy wheel rim to support the upper platform. The upper platform houses a PCB board, where a Raspberry Pi 4 Model B is connected to a camera, an Arduino Nano, and several LEDs that indicate the operational status of the microcontrollers. Additionally, it incorporates a variable converter and a step-down buck converter to ensure efficient power management. Under the lower base, we have integrated a [color sensor](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#color-sensor), which enhances the robot's ability to interact with its environment by detecting specific colors.
 
 We chose a [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) car metal chassis for its precision steering, significantly enhancing our robot's performance. Ideal for high-speed projects, the chassis features an [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) mechanism that mimics real-world vehicle geometry, offering accurate control, especially for automotive simulations. It is designed to handle heavier loads and provides superior stability and control, outperforming traditional skid-steering systems, with a front crash-absorbing construction for durability in demanding environments.
 <div align="center">
@@ -95,7 +95,7 @@ The chassis was initially equipped with a ready-made 12v gear motor that did not
 
 We opted for [servo](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#servo-motor)-based steering because it supports [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) and can operate at higher voltages, enabling us to extract more power from it.
 
-| Motor Modification | Servo and Steering | L293D Motor Driver | 
+| Motor Modification | [servo](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#servo-motor) and Steering | L293D Motor Driver | 
 |:-------------:|:--------------:|:--------------:|
 |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/fee35bc691b07fb0b37f6e46b393c0c5df1b9d9b/Chassis%20with%20Alteration%20Pic.png" alt="Image" width="431" height="292"/> |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/87c679497f70b1957eaf71e3fe3d9aff04042a1e/Servo%20based%20Steering.png" alt="Image" width="431" height="292"/>|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/7d8a22f8fafa1943d3d45af84985f3293b4d6ab3/L293D%20Motor%20Driver.jpg" alt="L293D Motor Driver" width="431" height="292"/>|
 
@@ -106,7 +106,7 @@ We initially used the TCS-34725 [color sensor](https://github.com/TVISTAURI6538/
 
 We have equipped the front of the car with a wide-angle camera to detect the corners of black walls and identify red and green blocks, preventing collisions. The camera is securely mounted on the Raspberry Pi case using double tape, which ensures precise distance calculations in the algorithm, enhancing navigation and obstacle detection.
 
-| Color sensor placed below the chassis | Camera mounted on top of the Raspberry Pi Case |
+| [Color Sensor](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#color-sensor) placed below the chassis | Camera mounted on top of the Raspberry Pi Case |
 |:-------------:|:--------------:|
 |<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/197f6f13374c1c13a13e4656a1a5d1e1633b4d48/Color%20sensor%20Attachment%20Pic.png" alt="Image" width="431" height="292"/>|<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/12aa34f148e0594feb91c38ac088f3d06b09e6fa/Camera%20mounted%20on%20top%20of%20the%20Raspberry%20Pi%20case.jpg " alt="Image" width="431" height="292"/> |
 
@@ -171,14 +171,14 @@ For effective traffic sign identification, we utilized a Raspberry Pi and a came
 - **Simultaneous Detection Handling**: When both red and green signs are detected simultaneously, compare their bounding rectangles and prioritize the larger one (indicating the closer traffic sign).
 
 ## Lap Count 
-For tracking laps, we utilized a TCS-230 color sensor controlled by an Arduino Nano, which is mounted on the underside of the chassis. The sensor was calibrated to effectively distinguish between blue, orange, and white colors, allowing for accurate detection of the track’s markings.
+For tracking laps, we utilized a TCS-230 [color sensor](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#color-sensor) controlled by an Arduino Nano, which is mounted on the underside of the chassis. The sensor was calibrated to effectively distinguish between blue, orange, and white colors, allowing for accurate detection of the track’s markings.
 
-We leveraged the blue and orange lines present at the corner sections of the track. When the color sensor detects orange, the robot temporarily halts color detection for 3 seconds using the ```millis()``` function. During this pause, the robot turns right for 1 second before resuming its wall and traffic sign avoidance routines. A similar process occurs when blue is detected, but in this case, the robot turns left instead of right.
+We leveraged the blue and orange lines present at the corner sections of the track. When the [color sensor](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#color-sensor) detects orange, the robot temporarily halts color detection for 3 seconds using the ```millis()``` function. During this pause, the robot turns right for 1 second before resuming its wall and traffic sign avoidance routines. A similar process occurs when blue is detected, but in this case, the robot turns left instead of right.
 
 To count the laps, we initialized a variable ```i = 0``` to keep track of the number of laps completed. Each time a color is detected, the variable increments by a factor of 1. Once ```i``` reaches 12 (indicating that 3 laps have been completed), the code executes an additional 3-second run before stopping the robot at the same section where it started.
 
 ## Movement
-- **Propulsion and Steering**: The robot is propelled by a high-torque dual shaft motor and steered using a servo motor connected to an Ackerman steering mechanism.
+- **Propulsion and Steering**: The robot is propelled by a high-torque dual shaft motor and steered using a [servo](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#servo-motor) motor connected to an Ackerman steering mechanism.
 
 - **Dynamic Control**: Functions for forward movement, ```leftTurn```, ```rightTurn```, and ```stopCar``` are defined, allowing the robot to respond to feedback from the Raspberry Pi and adjust its movements accordingly.
   
@@ -456,7 +456,7 @@ Mr.Manoj-Lab assistant
 ___
 # Our Journey
 ## Problems Encountered On The Way
-We decided to use the TCS-34725 for the color sensor.
+We decided to use the TCS-34725 for the [color sensor](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#color-sensor).
 
 <div align="center">
 <img src="TCS-34725.jpg" alt="TCS-34725" width="200" height="200">
