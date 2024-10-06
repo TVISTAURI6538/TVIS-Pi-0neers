@@ -459,7 +459,7 @@ ___
 We decided to use the TCS-34725 for the [color sensor](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#color-sensor).
 
 <div align="center">
-<img src="TCS-34725.jpg" alt="TCS-34725" width="200" height="200">
+<img src="Thttps://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/e48d3e6276615a14f0d4068f246e720e66e346e6/Photos/TCS-34725.jpg" alt="TCS-34725" width="200" height="200">
 </div>
 <br>
 The sensor we initially used proved to be highly inaccurate when tracking fast-paced movement. As a solution, we opted to utilize the TCS-230, which effectively served as a superior alternative to the TCS-34725.
