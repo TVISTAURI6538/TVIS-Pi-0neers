@@ -1,0 +1,233 @@
+#include <Servo.h>
+
+int i = 0;
+bool buttonPressed = false;  // To track if the button was pressed
+
+// Define color sensor pins
+#define S0 6
+#define S1 5
+#define S2 8
+#define S3 7
+#define sensorOut 9
+
+const int F = 2;
+const int B = 4;
+const int front = 91;
+const int left = 50;
+const int right = 125;
+const int buttonPin = 12;  // Changed button pin to 12
+
+Servo servo;
+
+// Calibration Values
+int redMin = 26;  // Red minimum value
+int redMax = 172; // Red maximum value
+int greenMin = 29;  // Green minimum value
+int greenMax = 297; // Green maximum value
+int blueMin = 22; // Blue minimum value
+int blueMax = 168; // Blue maximum value
+
+// Variables for Color Pulse Width Measurements
+int redPW = 0;
+int greenPW = 0;
+int bluePW = 0;
+
+// Variables for final Color values
+int redValue;
+int greenValue;
+int blueValue;
+
+int left_wall_read = A4;
+int right_wall_read = A5;
+int left_pillar_read = A2;
+int right_pillar_read = A3;
+
+unsigned long startTime = 0;  // To track when i reaches 12
+bool timeStarted = false;     // To check if the timer has started
+bool colorDetected = false;   // To track if a color has been detected
+unsigned long colorStopTime = 0;  // To store the time when color detection stopped
+
+void setup() {
+  // Set S0 - S3 as outputs
+  pinMode(S0, OUTPUT);
+  pinMode(S1, OUTPUT);
+  pinMode(S2, OUTPUT);
+  pinMode(S3, OUTPUT);
+  pinMode(A0, OUTPUT);
+  pinMode(A1, OUTPUT);
+  servo.attach(10);
+
+  // Set Sensor output as input
+  pinMode(sensorOut, INPUT);
+
+  // Set Frequency scaling to 20%
+  digitalWrite(S0, HIGH);
+  digitalWrite(S1, LOW);
+
+  pinMode(left_wall_read, INPUT);
+  pinMode(right_wall_read, INPUT);
+  pinMode(left_pillar_read, INPUT);
+  pinMode(right_pillar_read, INPUT);
+
+  // Button setup
+  pinMode(buttonPin, INPUT_PULLUP);  // Use internal pull-up resistor
+
+
+  // Setup Serial Monitor
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Check if button is pressed (buttonPin reads HIGH)
+  if (!buttonPressed && digitalRead(buttonPin) == LOW) {
+    buttonPressed = true;  // Register that the button has been pressed
+    delay(200);  // Debounce delay
+}
+
+
+  // Only proceed if the button was pressed once
+  if (buttonPressed) {
+    // When i becomes 12, start the timer
+    if (i == 12 && !timeStarted) {
+      startTime = millis();  // Record the current time
+      timeStarted = true;    // Indicate that the timer has started
+    }
+
+    // If the timer started and 3 seconds passed, stop the car
+    if (timeStarted && millis() - startTime >= 2000) { 
+      stopCar();  // Stop the car after 3 seconds
+      return;     // Exit the loop to stop further execution
+    }
+
+    // If a color was detected and 3 seconds haven't passed, skip color detection
+    if (colorDetected && millis() - colorStopTime < 3000) {
+      // Only check digital reads while color detection is paused
+      checkDigitalReads();
+      return;
+    } else if (colorDetected && millis() - colorStopTime >= 3000) {
+      // Reset the color detection pause after 3 seconds
+      colorDetected = false;
+    }
+
+    // If no color has been detected recently, proceed with color detection
+    if (!colorDetected) {
+      // Read and map RGB values
+      redPW = getRedPW();
+      redValue = map(redPW, redMin, redMax, 255, 0);
+      delay(10);
+
+      greenPW = getGreenPW();
+      greenValue = map(greenPW, greenMin, greenMax, 255, 0);
+      delay(10);
+
+      bluePW = getBluePW();
+      blueValue = map(bluePW, blueMin, blueMax, 255, 0);
+      delay(10);
+
+      // Print output to Serial Monitor
+      Serial.print("Red = ");
+      Serial.print(redValue);
+      Serial.print(" - Green = ");
+      Serial.print(greenValue);
+      Serial.print(" - Blue = ");
+      Serial.println(blueValue);
+
+      // Normal movement logic based on color and sensors
+      if (redValue - greenValue >= 4 && redValue - blueValue >= 12 && redValue > 200 && redValue < 260) {
+        digitalWrite(A0, HIGH);
+        digitalWrite(A1, LOW);
+        turnRight();
+        delay(800);
+        colorDetected = true;  // Mark color detected
+        colorStopTime = millis();  // Start the 3-second timer
+        i = i + 1;
+      } 
+      else if (greenValue - redValue >= 15 && greenValue < 255) {
+        digitalWrite(A0, LOW);
+        digitalWrite(A1, HIGH);
+        turnLeft();
+        delay(1000);
+        colorDetected = true;  // Mark color detected
+        colorStopTime = millis();  // Start the 3-second timer
+        i = i + 1;
+      } 
+      else {
+        checkDigitalReads();  // No color detected, check digital reads
+      }
+    }
+  }
+}
+
+// Function to check digital reads and interrupt turns
+void checkDigitalReads() {
+  if (digitalRead(left_wall_read) == 1) {
+    turnLeft();
+  }
+  else if (digitalRead(right_wall_read) == 1) {
+    turnRight();
+  }
+  else if (digitalRead(left_pillar_read) == 1) {
+    turnLeft();
+  }
+  else if (digitalRead(right_pillar_read) == 1) {
+    turnRight();
+  }
+  else {
+    moveForward();
+    digitalWrite(A0, LOW);
+    digitalWrite(A1, LOW);
+  }
+}
+
+// Function to read Red Pulse Widths
+int getRedPW() {
+  digitalWrite(S2, LOW);
+  digitalWrite(S3, LOW);
+  return pulseIn(sensorOut, LOW);
+}
+
+// Function to read Green Pulse Widths
+int getGreenPW() {
+  digitalWrite(S2, HIGH);
+  digitalWrite(S3, HIGH);
+  return pulseIn(sensorOut, LOW);
+}
+
+// Function to read Blue Pulse Widths
+int getBluePW() {
+  digitalWrite(S2, LOW);
+  digitalWrite(S3, HIGH);
+  return pulseIn(sensorOut, LOW);
+}
+
+// Function to move forward
+void moveForward() {
+  digitalWrite(F, HIGH);
+  digitalWrite(B, LOW);
+  servo.write(front);
+  Serial.println("Moving forward...");
+}
+
+// Function to turn right
+void turnRight() {
+  digitalWrite(F, HIGH);
+  digitalWrite(B, LOW);
+  servo.write(right);
+  Serial.println("Turning right...");
+}
+
+// Function to turn left
+void turnLeft() {
+  digitalWrite(F, HIGH);
+  digitalWrite(B, LOW);
+  servo.write(left);
+  Serial.println("Turning left...");
+}
+
+// Function to stop the car
+void stopCar() {
+  digitalWrite(F, LOW);
+  digitalWrite(B, LOW);
+  servo.write(front);
+  Serial.println("Car stopped...");
+}
