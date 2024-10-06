@@ -191,7 +191,113 @@ The feedback mechanism consists of the communication between the Raspberry Pi an
 
 ___
 # Code and Pseudocode Overview
+# Pseudocode for Arduino
+```
+// Initialize variables
+int i = 0
+bool buttonPressed = false  // Tracks if button is pressed
+bool timeStarted = false    // Tracks if the 3-second timer started when i = 12
+unsigned long startTime = 0 // Stores the time when i reaches 12
+bool colorDetected = false  // Tracks if a color was detected
+unsigned long colorStopTime = 0  // Stores the time when color detection paused
 
+// Setup color sensor pins and other inputs/outputs
+Setup pins for color sensor (S0, S1, S2, S3, sensorOut)
+Setup pins for motor control (A0, A1, F, B)
+Setup pins for digital inputs (left_wall_read, right_wall_read, left_pillar_read, right_pillar_read)
+Attach servo to pin 10
+Initialize Serial Monitor
+
+// Setup loop
+Loop {
+    // If button not yet pressed, check if button is pressed
+    If button is pressed:
+        Set buttonPressed to true
+        Debounce delay
+
+    // If button was pressed once
+    If buttonPressed is true:
+
+        // Check if i reached 12 and the timer hasn't started
+        If i == 12 and timeStarted is false:
+            Record the start time
+            Set timeStarted to true
+
+        // If timer started and 3 seconds passed, stop the car
+        If timeStarted is true and 3 seconds have passed since startTime:
+            Stop the car
+            Exit the loop (no further execution)
+
+        // If a color was detected and 3 seconds haven't passed, skip color detection
+        If colorDetected is true and 3 seconds haven't passed since colorStopTime:
+            Check digital sensor inputs (walls, pillars)
+            Return to the start of the loop
+
+        // If a color was detected and 3 seconds have passed, reset color detection
+        If colorDetected is true and 3 seconds have passed since colorStopTime:
+            Reset colorDetected to false
+
+        // If no color has been detected, proceed with color detection
+        If colorDetected is false:
+            Read Red, Green, and Blue pulse width values
+            Map the pulse widths to final RGB values
+
+            // If Red detected (based on thresholds)
+            If Red is detected:
+                Turn right
+                Set colorDetected to true
+                Record colorStopTime
+                Increment i by 1
+
+            // If Green detected (based on thresholds)
+            Else If Green is detected:
+                Turn left
+                Set colorDetected to true
+                Record colorStopTime
+                Increment i by 1
+
+            // If no color detected, check the digital sensor readings
+            Else:
+                Check digital sensor inputs (walls, pillars)
+
+}
+
+// Function to check digital sensor inputs for walls and pillars
+CheckDigitalReads() {
+    If left wall detected:
+        Turn left
+    Else If right wall detected:
+        Turn right
+    Else If left pillar detected:
+        Turn left
+    Else If right pillar detected:
+        Turn right
+    Else:
+        Move forward
+}
+
+// Functions to get Red, Green, and Blue pulse widths
+getRedPW()
+getGreenPW()
+getBluePW()
+
+// Functions for movement
+MoveForward() {
+    Move the car forward
+}
+
+TurnLeft() {
+    Turn the car left
+}
+
+TurnRight() {
+    Turn the car right
+}
+
+StopCar() {
+    Stop the car completely
+}
+```
 ___
 # Our Team
 **Vaishant Ananth** is an 11th-grade student, he aspires to become a robotic engineer passionate about coding and hardware. He is actively involved in various technology challenges and dedicated to mastering both the software and hardware aspects of robotics.
@@ -252,7 +358,7 @@ Initially, we implemented the ```i++``` logic for the robot to count laps, which
 
 ### Problems Faced During the Feedback Mechanism
 Initially, we attempted to establish communication between the Raspberry Pi and Arduino using serial communication over a USB cable. However, this approach proved highly unreliable, as the Arduino often failed to read the commands sent by the Raspberry Pi. To overcome this issue, we switched to using the ```GPIO.high``` and ```digitalRead``` logic, as explained above, which significantly improved communication accuracy.
-
+```
 ___
 # Demonstration Videos
 <table>
