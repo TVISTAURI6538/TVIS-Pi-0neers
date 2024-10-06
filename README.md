@@ -298,7 +298,7 @@ StopCar() {
     Stop the car completely
 }
 ```
-Click here for Arduino Code
+[**CLICK HERE FOR ARDUINO CODE**](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#color-sensor)
 
 # Pseudocode for Raspberry Pi
 ```
@@ -494,7 +494,6 @@ Initially, we implemented the ```i++``` logic for the robot to count laps, which
 
 ### Problems Faced During the Feedback Mechanism
 Initially, we attempted to establish communication between the Raspberry Pi and Arduino using serial communication over a USB cable. However, this approach proved highly unreliable, as the Arduino often failed to read the commands sent by the Raspberry Pi. To overcome this issue, we switched to using the ```GPIO.high``` and ```digitalRead``` logic, as explained above, which significantly improved communication accuracy.
-```
 ___
 # Demonstration Videos
 <table>
