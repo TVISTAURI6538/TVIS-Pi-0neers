@@ -45,6 +45,8 @@ Our self-driving car consists of an [Ackerman Steering](https://github.com/TVIST
 - LM2596 Step Down DC-DC Buck Converter Adjustable Module
 - TCS-230 [color sensor](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#color-sensor)
 - Push Button
+- L298D Motor Driver
+- Switch
 - Dual Shaft Plastic Geared Motor
 - Lego parts and Wheel Rim (For Elevation)
 ## Chassis
