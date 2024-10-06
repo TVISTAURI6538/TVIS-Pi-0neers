@@ -298,7 +298,7 @@ StopCar() {
     Stop the car completely
 }
 ```
-[**CLICK HERE FOR ARDUINO CODE**](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#color-sensor)
+[**CLICK HERE FOR ARDUINO CODE**](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Src/Arduino%20Code)
 
 # Pseudocode for Raspberry Pi
 ```
@@ -433,7 +433,7 @@ Release the camera.
 Destroy any OpenCV windows.
 Clean up GPIO settings.
 ```
-Click here for Raspberry Pi Code
+[**CLICK HERE FOR RASPBERRY PI CODE**](
 ___
 # Our Team
 **Vaishant Ananth** is an 11th-grade student, he aspires to become a robotic engineer passionate about coding and hardware. He is actively involved in various technology challenges and dedicated to mastering both the software and hardware aspects of robotics.
