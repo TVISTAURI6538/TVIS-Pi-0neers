@@ -298,6 +298,9 @@ StopCar() {
     Stop the car completely
 }
 ```
+Code for Arduino
+
+# Pseudocode for Raspberry Pi
 ___
 # Our Team
 **Vaishant Ananth** is an 11th-grade student, he aspires to become a robotic engineer passionate about coding and hardware. He is actively involved in various technology challenges and dedicated to mastering both the software and hardware aspects of robotics.
