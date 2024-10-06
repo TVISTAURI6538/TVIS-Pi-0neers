@@ -31,7 +31,13 @@ ___
  ___
  # Hardware
 Our self-driving car consists of an [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#ackerman-steering) metal chassis and integrates standard components such as cameras, sensors, and electrical systems to optimize motor torque, performance, etc.
-[Photo of the overall and completed robot]
+<div align="center">
+<img src="<div align="center">
+<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/50c2ba68a9a6ea608d6f43ca7d0acce09318adeb/Photos/Ackerman%20Steering%20Chassis.jpg" alt="Ackerman Steering Metal Chassis" width="400" height="400">
+</div>
+<br>
+
+
  ## Parts Used
 - Raspberry Pi 4 Model B
 - Arduino Nano
