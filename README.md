@@ -463,13 +463,13 @@ ___
 We decided to use the TCS-34725 for the [color sensor](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#color-sensor).
 
 <div align="center">
-<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/c5296ea7fe148fb9da19b8f14dc1a5572e2f1d65/Photos/TCS-230.jpg" width="200" height="200">
+<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/d85731fa06d502daa4b1a9e671bb4cb95249c388/Photos/TCS-34725.jpg" width="200" height="200">
 </div>
 <br>
 The sensor we initially used proved to be highly inaccurate when tracking fast-paced movement. As a solution, we opted to utilize the TCS-230, which effectively served as a superior alternative to the TCS-34725.
 <br><br>
 <div align="center">
-<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/21e24a178c6e81ccf80d88acbdca3c28154f7d53/Photos/TCS-230.jpg" alt="TCS-230" width="200" height="200">
+<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/c5296ea7fe148fb9da19b8f14dc1a5572e2f1d65/Photos/TCS-230.jpg" alt="TCS-230" width="200" height="200">
 </div>
 
 After assessing the situation, we decided to integrate a gyro sensor and an ultrasonic sensor. However, we found that the ultrasonic sensors provided very inaccurate readings during the robot's operation. To address this challenge, we considered using the EV3 system, but since neither of us had prior experience with it, we decided to set that option aside.
