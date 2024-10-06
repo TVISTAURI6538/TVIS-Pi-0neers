@@ -298,9 +298,142 @@ StopCar() {
     Stop the car completely
 }
 ```
-Code for Arduino
+Click here for Arduino Code
 
 # Pseudocode for Raspberry Pi
+```
+Initialize Camera and GPIO:
+
+Define camera properties:
+Set camera device (0 for built-in, 1 for external).
+Set resolution to width = 640, height = 400.
+Set frame rate to 50 FPS.
+Initialize the camera and wait for stabilization (e.g., sleep for 2 seconds).
+Set Frame Parameters:
+
+Define constants:
+frame_height = 400
+frame_width = 640
+third_height = 123 (height for dividing frame into three parts)
+bottom_line_y = 2 * third_height (Y-coordinate for the bottom line)
+left_margin_end = 150 (end coordinate for the left margin)
+right_margin_start = 490 (start coordinate for the right margin)
+GPIO Pin Definitions:
+
+Define GPIO pins for motor controls:
+left_turn_black_wall = 17
+right_turn_black_wall = 27
+left_turn_pillar = 22
+right_turn_pillar = 23
+forward = 2
+LED_PIN = 3 (for LED status indication)
+Set GPIO mode to BCM and disable warnings.
+Initialize all defined GPIO pins as output.
+LED Blinking Mechanism:
+
+Define variables for LED blinking:
+blink_interval = 0.5
+last_blink_time = current time
+led_state = False
+Function: blink_led_non_blocking()
+Get the current time.
+If the difference between current time and last_blink_time is greater than blink_interval:
+Toggle led_state (turn LED on or off).
+Update last_blink_time.
+Define Movement Command Functions:
+
+Function: left_command_black_wall()
+Set left motor GPIO pin to HIGH.
+Function: right_command_black_wall()
+Set right motor GPIO pin to HIGH.
+Function: left_command_green_pillar()
+Set left turn GPIO pin to HIGH.
+Function: right_command_red_pillar()
+Set right turn GPIO pin to HIGH.
+Function: forward_command()
+Set forward GPIO pin to HIGH.
+Set Minimum Contour Area for Detection:
+
+Define min_contour_area = 1500 (adjustable based on testing).
+Main Loop (Run Continuously):
+
+While True:
+Capture frame from the camera:
+If frame capture fails, print error message and break.
+Call blink_led_non_blocking().
+Convert Frame to HSV:
+
+Convert captured BGR frame to HSV color space for better color detection.
+Define HSV Ranges for Color Detection:
+
+Red Pillar:
+lower_red1 = (0, 105, 15)
+upper_red1 = (10, 255, 102)
+lower_red2 = (145, 120, 70)
+upper_red2 = (180, 255, 255)
+Green Pillar:
+lower_green = (55, 125, 17)
+upper_green = (87, 255, 193)
+Black Walls:
+lower_black = (0, 0, 0)
+upper_black = (180, 255, 8)
+Create Masks for Color Detection:
+
+Create mask for black walls using the defined HSV range.
+Create masks for red and green using their respective ranges.
+Contour Detection for Red Pillar:
+
+Find contours for the red mask:
+Initialize flags: red_detected = False, red_in_zone = False, red_area = 0.
+If contours are found:
+Identify the largest contour.
+Calculate its area. If it exceeds min_contour_area:
+Get bounding rectangle and calculate the center.
+Draw bounding rectangle and center on the image.
+Check if red contour is in the left zone:
+Set red_detected or red_in_zone flags accordingly.
+Contour Detection for Green Pillar:
+
+Find contours for the green mask:
+Initialize flags: green_detected = False, green_in_zone = False, green_area = 0.
+If contours are found:
+Identify the largest contour.
+Calculate its area. If it exceeds min_contour_area:
+Get bounding rectangle and calculate the center.
+Draw bounding rectangle and center on the image.
+Check if green contour is in the right zone:
+Set green_detected or green_in_zone flags accordingly.
+Determine Robot Actions Based on Color Detection:
+
+If both red_detected and green_detected:
+Compare red_area and green_area:
+If red_area > green_area, execute right_command_red_pillar(), print message indicating right turn.
+Else, execute left_command_green_pillar(), print message indicating left turn.
+Else If only red_detected:
+Execute right_command_red_pillar(), print message indicating right turn.
+Else If only green_detected:
+Execute left_command_green_pillar(), print message indicating left turn.
+Else (no red or green detected):
+Set all motor commands (left, right, and forward) to LOW.
+Black Wall Detection Logic:
+
+Check if black wall contacts the left or right part of the bottom line:
+Define left_bottom_line as the mask region of the left side of the bottom line.
+Define right_bottom_line as the mask region of the right side of the bottom line.
+Check for black wall presence:
+If black is detected on the left, call right_command_black_wall() and print message indicating right turn.
+Else if black is detected on the right, call left_command_black_wall() and print message indicating left turn.
+Else, print "No black detected: Move forward".
+Exit Mechanism:
+
+If 'q' is pressed, break the main loop.
+Cleanup Resources:
+
+Release the camera.
+Destroy any OpenCV windows.
+Clean up GPIO settings.
+```
+Click here for Raspberry Pi Code
 ___
 # Our Team
 **Vaishant Ananth** is an 11th-grade student, he aspires to become a robotic engineer passionate about coding and hardware. He is actively involved in various technology challenges and dedicated to mastering both the software and hardware aspects of robotics.
