@@ -1,0 +1,205 @@
+# Raspberry Pi(Traffic Sign Identification and Wall Detection)
+import RPi.GPIO as GPIO
+import time
+import cv2
+
+# Initialize webcam (replace 0 with 1 if an external USB webcam is used)
+camera = cv2.VideoCapture(0, cv2.CAP_V4L2)
+camera.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 400)
+camera.set(cv2.CAP_PROP_FPS, 50)
+time.sleep(2)
+
+# Frame height and margin coordinates
+frame_height = 400
+frame_width = 640
+third_height = 123  # Divide frame into 3 equal parts
+bottom_line_y = 2 * third_height  # Y-coordinate for the bottom line
+
+left_margin_end = 150
+right_margin_start = 490
+
+# GPIO pin definitions
+left_turn_black_wall = 17  # Replace with your left motor GPIO pin for black wall avoidance
+right_turn_black_wall = 27  # Replace with your right motor GPIO pin for black wall avoidance
+left_turn_pillar = 22  # GPIO pin for left turn in green pillar logic
+right_turn_pillar = 23  # GPIO pin for right turn in red pillar logic
+forward = 2
+LED_PIN = 3  # GPIO pin for LED
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(left_turn_black_wall, GPIO.OUT)
+GPIO.setup(right_turn_black_wall, GPIO.OUT)
+GPIO.setup(left_turn_pillar, GPIO.OUT)
+GPIO.setup(right_turn_pillar, GPIO.OUT)
+GPIO.setup(LED_PIN, GPIO.OUT)
+
+# Blink variables
+blink_interval = 0.5  # LED blink every 0.5 seconds
+last_blink_time = time.time()
+led_state = False  # Track the LED state (on/off)
+
+def blink_led_non_blocking():
+    global last_blink_time, led_state
+    current_time = time.time()
+    if current_time - last_blink_time >= blink_interval:
+        # Toggle LED state
+        led_state = not led_state
+        GPIO.output(LED_PIN, led_state)  # Turn LED on or off
+        last_blink_time = current_time  # Update last blink time
+
+def left_command_black_wall():  
+    GPIO.output(left_turn_black_wall, GPIO.HIGH)
+   
+def right_command_black_wall():
+    GPIO.output(right_turn_black_wall, GPIO.HIGH)
+
+def left_command_green_pillar():  
+    GPIO.output(left_turn_pillar, GPIO.HIGH)
+
+def right_command_red_pillar():
+    GPIO.output(right_turn_pillar, GPIO.HIGH)
+   
+def forward_command():
+    GPIO.output(forward, GPIO.HIGH)
+
+# Set minimum contour area for valid red and green detection
+min_contour_area = 1500  # Adjust this value depending on your needs
+
+try:
+    while True:
+        # Capture frame-by-frame from the webcam
+        ret, image = camera.read()
+        if not ret:
+            print("Failed to grab frame")
+            break
+       
+        blink_led_non_blocking()
+
+        # Convert frame to HSV color space
+        hsv_frame = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+
+        # Define HSV range for red and green pillars
+        lower_red1 = (0, 105, 15)    # Lower range for red
+        upper_red1 = (10, 255, 102)   # Upper range for red
+        lower_red2 = (145, 120, 70)  # Lower range for red (wrap around)
+        upper_red2 = (180, 255, 255)  # Upper range for red (wrap around)
+       
+        lower_green = (55, 125, 17)  # Lower range for green
+        upper_green = (87, 255, 193)  # Upper range for green
+       
+        # Define HSV range for black walls
+        lower_black = (0, 0, 0)
+        upper_black = (180, 255, 8)
+
+        # Create a mask to detect black walls
+        mask_black = cv2.inRange(hsv_frame, lower_black, upper_black)
+
+        # Draw margins and lines on the image (for visualization)
+        cv2.line(image, (left_margin_end, 0), (left_margin_end, frame_height), (0, 255, 255), 1)  # Left margin line
+        cv2.line(image, (right_margin_start, 0), (right_margin_start, frame_height), (0, 255, 255), 1)  # Right margin line
+        cv2.line(image, (0, bottom_line_y), (640, bottom_line_y), (0, 0, 255), 3)  # Bottom line (highlighted)
+
+        # Check for red detection
+        mask_red1 = cv2.inRange(hsv_frame, lower_red1, upper_red1)
+        mask_red2 = cv2.inRange(hsv_frame, lower_red2, upper_red2)
+        mask_red = mask_red1 | mask_red2  # Combine both masks
+
+        contours_red, _ = cv2.findContours(mask_red, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        red_detected = False
+        red_in_zone = False
+        red_area = 0
+
+        # Check for the largest red contour
+        if contours_red:
+            largest_red = max(contours_red, key=cv2.contourArea)
+            red_area = cv2.contourArea(largest_red)
+            if red_area > min_contour_area:  # Only proceed if the contour is larger than the threshold
+                x_r, y_r, w_r, h_r = cv2.boundingRect(largest_red)
+                if h_r >= w_r:  # Ensure height is greater than width
+                    center_x_r = x_r + int(w_r / 2)
+
+                    # Draw bounding rectangle and center for red
+                    cv2.rectangle(image, (x_r, y_r), (x_r + w_r, y_r + h_r), (0, 0, 255), 2)  # Red rectangle
+                    cv2.circle(image, (center_x_r, y_r + h_r // 2), 5, (0, 0, 255), -1)  # Red center
+
+                    # Check if red object is in the correct left zone
+                    if center_x_r >= left_margin_end:
+                        red_detected = True
+                    else:
+                        red_in_zone = True  # Red is in the correct left zone
+
+        # Check for green detection
+        mask_green = cv2.inRange(hsv_frame, lower_green, upper_green)
+        contours_green, _ = cv2.findContours(mask_green, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        green_detected = False
+        green_in_zone = False
+        green_area = 0
+
+        # Check for the largest green contour
+        if contours_green:
+            largest_green = max(contours_green, key=cv2.contourArea)
+            green_area = cv2.contourArea(largest_green)
+            if green_area > min_contour_area:  # Only proceed if the contour is larger than the threshold
+                x_g, y_g, w_g, h_g = cv2.boundingRect(largest_green)
+                if h_g >= w_g:  # Ensure height is greater than width
+                    center_x_g = x_g + int(w_g / 2)
+
+                    # Draw bounding rectangle and center for green
+                    cv2.rectangle(image, (x_g, y_g), (x_g + w_g, y_g + h_g), (0, 255, 0), 2)  # Green rectangle
+                    cv2.circle(image, (center_x_g, y_g + h_g // 2), 5, (0, 255, 0), -1)  # Green center
+
+                    # Check if green object is in the correct right zone
+                    if center_x_g <= right_margin_start:
+                        green_detected = True
+                    else:
+                        green_in_zone = True  # Green is in the correct right zone
+
+        # Perform actions based on detection
+        if red_detected and green_detected:
+            if red_area > green_area:
+                right_command_red_pillar()  # Turn right based on red pillar logic
+                print("Red detected and prioritized due to larger contour: Turn right")
+            else:
+                left_command_green_pillar()  # Turn left based on green pillar logic
+                print("Green detected and prioritized due to larger contour: Turn left")
+        elif red_detected:
+            right_command_red_pillar()  # Turn right based on red pillar logic
+            print("Red detected: Turn right")
+        elif green_detected:
+            left_command_green_pillar()  # Turn left based on green pillar logic
+            print("Green detected: Turn left")
+        else:
+            # No red or green detected, perform black wall detection
+            GPIO.output(left_turn_black_wall, GPIO.LOW)
+            GPIO.output(right_turn_black_wall, GPIO.LOW)
+            GPIO.output(left_turn_pillar, GPIO.LOW)
+            GPIO.output(right_turn_pillar, GPIO.LOW)
+
+            # Check if black touches the left or right part of the bottom line
+            left_bottom_line = mask_black[bottom_line_y, 0:left_margin_end]  # Left side of the bottom line
+            right_bottom_line = mask_black[bottom_line_y, right_margin_start:frame_width]  # Right side of the bottom line
+           
+            black_on_left = cv2.countNonZero(left_bottom_line) > 0
+            black_on_right = cv2.countNonZero(right_bottom_line) > 0
+
+            if black_on_left:
+                right_command_black_wall()  # Turn right if black touches the left side of the bottom line
+                print("Black on left side of bottom line: Turn right")
+            elif black_on_right:
+                left_command_black_wall()  # Turn left if black touches the right side of the bottom line
+                print("Black on right side of bottom line: Turn left")
+            else:
+                print("No black detected: Move forward")
+       
+
+        # Break the loop on pressing 'q'
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+finally:
+    camera.release()
+    cv2.destroyAllWindows()
+    GPIO.cleanup()
+
