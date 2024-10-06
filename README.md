@@ -30,7 +30,7 @@ ___
 - [**Demonstration Videos**](#demonstration-videos)
  ___
  # Hardware
-Our self-driving car consists of an [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/50c2ba68a9a6ea608d6f43ca7d0acce09318adeb/Photos/Ackerman%20Steering%20Chassis.jpg) metal chassis and integrates standard components such as cameras, sensors, and electrical systems to optimize motor torque, performance, etc.
+Our self-driving car consists of an [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#ackerman-steering) metal chassis and integrates standard components such as cameras, sensors, and electrical systems to optimize motor torque, performance, etc.
 [Photo of the overall and completed robot]
  ## Parts Used
 - Raspberry Pi 4 Model B
@@ -48,7 +48,7 @@ Our [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-E
 
 We chose a [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) car metal chassis for its precision steering, significantly enhancing our robot's performance. Ideal for high-speed projects, the chassis features an [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#steering) mechanism that mimics real-world vehicle geometry, offering accurate control, especially for automotive simulations. It is designed to handle heavier loads and provides superior stability and control, outperforming traditional skid-steering systems, with a front crash-absorbing construction for durability in demanding environments.
 <div align="center">
-<img src="Ackerman Steering Chassis.jpg" alt="Ackerman Steering Metal Chassis" width="400" height="400">
+<img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/50c2ba68a9a6ea608d6f43ca7d0acce09318adeb/Photos/Ackerman%20Steering%20Chassis.jpg" alt="Ackerman Steering Metal Chassis" width="400" height="400">
 </div>
 <br>
 
