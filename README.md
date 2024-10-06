@@ -192,7 +192,7 @@ The feedback mechanism consists of the communication between the Raspberry Pi an
 ___
 # Code and Pseudocode Overview
 # Pseudocode for Arduino
-```
+```C++
 // Initialize variables
 int i = 0
 bool buttonPressed = false  // Tracks if button is pressed
