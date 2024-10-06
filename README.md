@@ -30,7 +30,7 @@ ___
 - [**Demonstration Videos**](#demonstration-videos)
  ___
  # Hardware
-Our self-driving car consists of an [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#ackerman-steering) metal chassis and integrates standard components such as cameras, sensors, and electrical systems to optimize motor torque, performance, etc.
+Our self-driving car consists of an [Ackerman Steering](https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/main/Mechanism.md#ackerman-steering) metal chassis and integrates standard components such as cameras, sensors, and electrical systems to optimize motor torque, performance, etc. We named it Bumble B
 <div align="center">
 <img src="https://github.com/TVISTAURI6538/TVIS_Pi-0neers_Future-Engineers-2024/blob/d04ce6644067cbafa35ce97b18eb30ff2151ffca/V-Photos/Bumble%20B%20Cover%20Pic.jpg" alt="Overall Robot" width="700" height="700">
 </div>
